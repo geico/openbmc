@@ -1,0 +1,2 @@
+recipes-kernel       - kernel recipe modifications
+recipes-phospor      - phosphor recipe modifications
