@@ -10,7 +10,7 @@ SRC_URI += "file://config.yaml"
 
 PROVIDES += "virtual/phosphor-ipmi-fru-inventory"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 do_install() {
         DEST=${D}${config_datadir}

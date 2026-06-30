@@ -10,7 +10,7 @@ SRC_URI += "file://layout.yaml"
 
 PROVIDES += "virtual/openpower-fru-vpd-layout"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}/sources"
 
 do_install() {
         DEST=${D}${vpdlayout_datadir}

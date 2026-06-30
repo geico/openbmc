@@ -9,7 +9,7 @@ SRC_URI = " \
     file://mtjade-ipmi-fru.yaml \
     "
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}/sources"
 
 do_install() {
     install -m 0644 -D ${MACHINE}-ipmi-sensors.yaml \

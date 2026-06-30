@@ -8,21 +8,24 @@ DEPENDS += "phosphor-dbus-interfaces"
 DEPENDS += "sdeventplus"
 DEPENDS += "phosphor-logging"
 DEPENDS += "nlohmann-json"
-SRCREV = "ce8b5ae4e7fc1c88cdd85dab8c007cd14408d93f"
+SRCREV = "292b419cfd2cc4c374f60aa4aaddb220295f1909"
 PV = "0.1+git${SRCPV}"
 PR = "r1"
 
 SRC_URI = "git://github.com/openbmc/phosphor-health-monitor.git;protocol=https;branch=master"
 
-S = "${WORKDIR}/git"
 SYSTEMD_SERVICE:${PN} = "phosphor-health-monitor.service"
 
 inherit meson pkgconfig
 inherit systemd
 
+SRC_URI:append:df-phosphor-mmc = " \
+    file://bmc_health_config.json \
+"
+
 do_install:append() {
-  if [ -e "${WORKDIR}/bmc_health_config.json" ]; then
+  if [ -e "${UNPACKDIR}/bmc_health_config.json" ]; then
     install -d ${D}${sysconfdir}/healthMon
-    install -m 0644 ${WORKDIR}/bmc_health_config.json ${D}${sysconfdir}/healthMon
+    install -m 0644 ${UNPACKDIR}/bmc_health_config.json ${D}${sysconfdir}/healthMon
   fi
 }

@@ -1,9 +1,8 @@
-#MACHINE ?= "p10bmc"
-MACHINE ??= "witherspoon"
+MACHINE ??= "p10bmc"
 DISTRO ?= "openbmc-openpower"
 PACKAGE_CLASSES ?= "package_ipk"
 SANITY_TESTED_DISTROS:append ?= " *"
-EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
+EXTRA_IMAGE_FEATURES ?= "allow-root-login"
 USER_CLASSES ?= "buildstats"
 PATCHRESOLVE = "noop"
 BB_DISKMON_DIRS ??= "\

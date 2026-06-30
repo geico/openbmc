@@ -10,7 +10,7 @@ SRC_URI += " \
   file://authorized-keys-comp.sh \
   "
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 RDEPENDS:${PN} += "bash"
 

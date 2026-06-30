@@ -10,7 +10,7 @@ SRC_URI += "file://config.yaml"
 
 PROVIDES += "virtual/phosphor-ipmi-fru-hostfw-config"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 do_install() {
         DEST=${D}${hostfw_datadir}

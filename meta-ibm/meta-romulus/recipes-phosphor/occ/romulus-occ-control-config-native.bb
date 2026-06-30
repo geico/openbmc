@@ -10,7 +10,7 @@ SRC_URI += "file://occ_sensor.yaml"
 
 PROVIDES += "virtual/openpower-occ-control-config-native"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 do_install() {
     install -d ${YAML_DEST}/

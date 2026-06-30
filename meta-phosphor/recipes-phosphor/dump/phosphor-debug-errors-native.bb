@@ -6,7 +6,7 @@ PR = "r1"
 
 SRC_URI += "file://errors_watch.yaml"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 inherit native
 

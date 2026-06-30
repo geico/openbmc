@@ -23,7 +23,6 @@ DEPENDS += "phosphor-dbus-interfaces"
 DEPENDS += "phosphor-logging"
 DEPENDS += "libcereal"
 
-S = "${WORKDIR}/git"
 SRC_URI += "file://merge_settings.py"
 
 # 'boot_type' configuration parameter is used to add support for
@@ -43,7 +42,7 @@ python do_merge_settings () {
     import subprocess
 
     # TODO: Perform the merge in a temporary directory?
-    workdir = d.getVar('WORKDIR', True)
+    workdir = d.getVar('UNPACKDIR', True)
     nativedir = d.getVar('STAGING_DIR_NATIVE', True)
     settingsdir = d.getVar('settings_datadir', True)
     settingsdir = settingsdir[1:]

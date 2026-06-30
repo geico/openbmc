@@ -8,8 +8,9 @@ DEPENDS += " \
     sdeventplus \
     phosphor-dbus-interfaces \
     phosphor-logging \
+    libgpiod \
     "
-SRCREV = "d36b6b1d3887f8545b1558f8f0d946a9c9785a72"
+SRCREV = "b8072056e50001eff5f18baf225005721849d8fd"
 PACKAGECONFIG ??= "signals handler"
 PACKAGECONFIG[signals] = ",,gpioplus nlohmann-json,"
 PACKAGECONFIG[handler] = ",,,${VIRTUAL-RUNTIME_obmc-host-state-manager} ${VIRTUAL-RUNTIME_obmc-chassis-state-manager}"
@@ -18,7 +19,6 @@ PR = "r1"
 
 SRC_URI = "git://github.com/openbmc/phosphor-buttons.git;branch=master;protocol=https"
 
-S = "${WORKDIR}/git"
 SYSTEMD_PACKAGES = "${BUTTON_PACKAGES}"
 SYSTEMD_SERVICE:${PN}-signals = "xyz.openbmc_project.Chassis.Buttons.service"
 SYSTEMD_SERVICE:${PN}-handler = "phosphor-button-handler.service"
@@ -35,9 +35,9 @@ BUTTON_PACKAGES = "${PN}-signals ${PN}-handler"
 PACKAGE_BEFORE_PN += "${BUTTON_PACKAGES}"
 
 do_install:append() {
-  if [ -e "${WORKDIR}/gpio_defs.json" ]; then
+  if [ -e "${UNPACKDIR}/gpio_defs.json" ]; then
      install -m 0755 -d ${D}/etc/default/obmc/gpio
-     install -m 0644 -D ${WORKDIR}/gpio_defs.json \
+     install -m 0644 -D ${UNPACKDIR}/gpio_defs.json \
                    ${D}/etc/default/obmc/gpio
   fi
 }

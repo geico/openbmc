@@ -8,7 +8,7 @@ inherit obmc-phosphor-systemd
 
 RDEPENDS:${PN} += "bash"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}/sources"
 
 SRC_URI += "file://me-time-sync.sh"
 

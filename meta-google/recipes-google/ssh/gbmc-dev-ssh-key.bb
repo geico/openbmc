@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/Apache-2.0;md5
 
 SRC_URI += "file://gbmc-dev.pub"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 FILES:${PN} += " ${datadir}/authorized_keys.d"
 

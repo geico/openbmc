@@ -10,13 +10,12 @@ DEPENDS:append = "\
     phosphor-logging \
     sdbusplus \
 "
-SRCREV = "60fab695b07ecf8fd256a34ba8f3d1f8bebc24d9"
+SRCREV = "b747e114ff09b061af72fa7d5fcf10209d2e2fe0"
 PV = "0.1+git${SRCPV}"
 PR = "r1"
 
 SRC_URI = "git://github.com/openbmc/phosphor-virtual-sensor.git;protocol=https;branch=master"
 
-S = "${WORKDIR}/git"
 SYSTEMD_SERVICE:${PN} = "phosphor-virtual-sensor.service"
 
 inherit meson pkgconfig

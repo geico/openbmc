@@ -9,7 +9,7 @@ inherit obmc-phosphor-systemd
 FILESEXTRAPATHS:prepend := "${THISDIR}/op-host-control:"
 RDEPENDS:${PN} += "op-proc-control"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 TMPL = "cfam_override@.service"
 INSTFMT = "cfam_override@{0}.service"

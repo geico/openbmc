@@ -10,7 +10,7 @@ SRC_URI:genesis3 = " \
     file://genesis3-ipmi-fru-properties.yaml \
     "
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 do_install:genesis3() {
     install -m 0644 -D genesis3-ipmi-fru.yaml \

@@ -16,9 +16,8 @@ DEPENDS += " \
         phosphor-logging \
         ${PYTHON_PN}-sdbus++-native \
         cli11 \
-        ipl \
+        ${@bb.utils.contains('MACHINE_FEATURES', 'phal', 'ipl','', d)} \
         "
-S = "${WORKDIR}/git"
 
 # This provides below applications that are called into in case
 # of host checkstop, host watchdog and host watchdog-timeout respectively.

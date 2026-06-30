@@ -10,7 +10,7 @@ SRCREV = "${AUTOREV}"
 SRC_URI =  "file://fpgardu.sh"
 SRC_URI += "file://LICENSE"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 do_install () {
         install -d ${D}${bindir}

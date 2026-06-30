@@ -1,6 +1,0 @@
-header:
-  version: 14
-  includes:
-    - ci/corstone1000-common.yml
-
-machine: corstone1000-mps3

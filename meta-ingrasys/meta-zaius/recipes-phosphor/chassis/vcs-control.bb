@@ -6,6 +6,8 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/Apache-2.0;md5
 
 inherit obmc-phosphor-systemd
 
+S = "${UNPACKDIR}/sources"
+
 TMPL_OFF = "vcs-off@.service"
 TMPL_ON = "vcs-on@.service"
 INSTFMT_OFF = "vcs-off@{0}.service"
@@ -25,5 +27,5 @@ RDEPENDS:${PN} += "bash i2c-tools"
 
 do_install() {
         install -d ${D}${bindir}
-        install -m 0755 ${WORKDIR}/zaius_vcs.sh ${D}${bindir}/zaius_vcs.sh
+        install -m 0755 ${UNPACKDIR}/zaius_vcs.sh ${D}${bindir}/zaius_vcs.sh
 }

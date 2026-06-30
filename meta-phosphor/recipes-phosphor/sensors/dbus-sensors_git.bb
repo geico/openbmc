@@ -11,30 +11,38 @@ DEPENDS = " \
     phosphor-logging \
     sdbusplus \
     "
-SRCREV = "e1dcb5c1f2d33048a55b20fc1a9830ea02c9d814"
+SRCREV = "ceaeee5de6114a1a3e50914faa87521e4165ce39"
 PACKAGECONFIG ??= " \
     adcsensor \
-    intelcpusensor \
     exitairtempsensor \
+    external \
     fansensor \
     hwmontempsensor \
+    intelcpusensor \
     intrusionsensor \
     ipmbsensor \
     mcutempsensor \
     psusensor \
-    external \
+    "
+PACKAGECONFIG:append:df-mctp = "\
+    mctpreactor \
     "
 PACKAGECONFIG[adcsensor] = "-Dadc=enabled, -Dadc=disabled"
-PACKAGECONFIG[intelcpusensor] = "-Dintel-cpu=enabled, -Dintel-cpu=disabled, libpeci"
+PACKAGECONFIG[cablemonitor] = "-Dcable-monitor=enabled, -Dcable-monitor=disabled"
 PACKAGECONFIG[exitairtempsensor] = "-Dexit-air=enabled, -Dexit-air=disabled"
+PACKAGECONFIG[external] = "-Dexternal=enabled, -Dexternal=disabled"
 PACKAGECONFIG[fansensor] = "-Dfan=enabled, -Dfan=disabled"
 PACKAGECONFIG[hwmontempsensor] = "-Dhwmon-temp=enabled, -Dhwmon-temp=disabled"
+PACKAGECONFIG[intelcpusensor] = "-Dintel-cpu=enabled, -Dintel-cpu=disabled, libpeci"
 PACKAGECONFIG[intrusionsensor] = "-Dintrusion=enabled, -Dintrusion=disabled"
 PACKAGECONFIG[ipmbsensor] = "-Dipmb=enabled, -Dipmb=disabled"
+PACKAGECONFIG[leakdetector] = "-Dleakdetector=enabled, -Dleakdetector=disabled"
+PACKAGECONFIG[mctpreactor] = "-Dmctp=enabled, -Dmctp=disabled"
 PACKAGECONFIG[mcutempsensor] = "-Dmcu=enabled, -Dmcu=disabled"
-PACKAGECONFIG[psusensor] = "-Dpsu=enabled, -Dpsu=disabled"
+PACKAGECONFIG[nvidia-gpu] = "-Dnvidia-gpu=enabled, -Dnvidia-gpu=disabled"
 PACKAGECONFIG[nvmesensor] = "-Dnvme=enabled, -Dnvme=disabled"
-PACKAGECONFIG[external] = "-Dexternal=enabled, -Dexternal=disabled"
+PACKAGECONFIG[psusensor] = "-Dpsu=enabled, -Dpsu=disabled"
+PACKAGECONFIG[smbpbi] = "-Dsmbpbi=enabled, -Dsmbpbi=disabled"
 PV = "0.1+git${SRCPV}"
 
 SRC_URI = "git://github.com/openbmc/dbus-sensors.git;branch=master;protocol=https"
@@ -42,11 +50,14 @@ SRC_URI = "git://github.com/openbmc/dbus-sensors.git;branch=master;protocol=http
 SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'adcsensor', \
                                                'xyz.openbmc_project.adcsensor.service', \
                                                '', d)}"
-SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'intelcpusensor', \
-                                               'xyz.openbmc_project.intelcpusensor.service', \
+SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'cablemonitor', \
+                                               'xyz.openbmc_project.cablemonitor.service', \
                                                '', d)}"
 SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'exitairtempsensor', \
                                                'xyz.openbmc_project.exitairsensor.service', \
+                                               '', d)}"
+SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'external', \
+                                               'xyz.openbmc_project.externalsensor.service', \
                                                '', d)}"
 SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'fansensor', \
                                                'xyz.openbmc_project.fansensor.service', \
@@ -54,25 +65,36 @@ SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'fansensor', \
 SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'hwmontempsensor', \
                                                'xyz.openbmc_project.hwmontempsensor.service', \
                                                '', d)}"
+SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'intelcpusensor', \
+                                               'xyz.openbmc_project.intelcpusensor.service', \
+                                               '', d)}"
 SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'intrusionsensor', \
                                                'xyz.openbmc_project.intrusionsensor.service', \
                                                '', d)}"
 SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'ipmbsensor', \
                                                'xyz.openbmc_project.ipmbsensor.service', \
                                                '', d)}"
+SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'leakdetector', \
+                                               'xyz.openbmc_project.leakdetector.service', \
+                                               '', d)}"
+SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'mctpreactor', \
+                                               'xyz.openbmc_project.mctpreactor.service', \
+                                               '', d)}"
 SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'mcutempsensor', \
                                                'xyz.openbmc_project.mcutempsensor.service', \
                                                '', d)}"
-SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'psusensor', \
-                                               'xyz.openbmc_project.psusensor.service', \
+SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'nvidia-gpu', \
+                                               'xyz.openbmc_project.nvidiagpusensor.service', \
                                                '', d)}"
 SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'nvmesensor', \
                                                'xyz.openbmc_project.nvmesensor.service', \
                                                '', d)}"
-SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'external', \
-                                               'xyz.openbmc_project.externalsensor.service', \
+SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'psusensor', \
+                                               'xyz.openbmc_project.psusensor.service', \
                                                '', d)}"
-S = "${WORKDIR}/git"
+SYSTEMD_SERVICE:${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'smbpbi', \
+                                               'xyz.openbmc_project.smbpbisensor.service', \
+                                               '', d)}"
 
 inherit pkgconfig meson systemd
 

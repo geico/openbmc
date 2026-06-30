@@ -12,7 +12,7 @@ SRC_URI = " \
     file://nicole-ipmi-sensors.yaml \
     "
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}/sources"
 
 do_install() {
     install -m 0644 -D nicole-ipmi-fru-properties.yaml \

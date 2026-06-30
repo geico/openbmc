@@ -6,7 +6,7 @@ PR = "r1"
 
 SRC_URI = "file://assettag.yaml"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 inherit allarch
 inherit phosphor-inventory-manager

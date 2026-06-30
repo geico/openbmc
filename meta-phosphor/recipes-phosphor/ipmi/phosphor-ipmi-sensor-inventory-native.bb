@@ -6,7 +6,7 @@ PR = "r1"
 
 SRC_URI += "file://config.yaml"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 inherit phosphor-ipmi-host
 inherit native
@@ -17,5 +17,5 @@ do_install() {
         # provides a sample output file.
         DEST=${D}${sensor_datadir}
         install -d ${DEST}
-        install config.yaml ${DEST}/sensor.yaml
+        install ${S}/config.yaml ${DEST}/sensor.yaml
 }

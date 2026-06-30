@@ -10,11 +10,12 @@ SRC_URI += " \
   file://gbmc-mac-config.sh.in \
   "
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 RDEPENDS:${PN} += " \
   bash \
   ipmi-fru-sh \
+  network-sh \
   "
 
 FILES:${PN} += "${systemd_unitdir}"

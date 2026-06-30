@@ -4,7 +4,7 @@ DEPENDS = "mrw-native mrw-perl-tools-native"
 PROVIDES += "virtual/phosphor-fan-presence-config"
 PR = "r1"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 inherit allarch
 inherit phosphor-fan

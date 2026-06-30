@@ -4,33 +4,43 @@ DESCRIPTION = "An error and event log daemon application, and \
 HOMEPAGE = "https://github.com/openbmc/phosphor-logging"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=e3fc50a88d0a364313df4b21ef20c29e"
-DEPENDS += "systemd"
-DEPENDS += "${PYTHON_PN}-mako-native"
-DEPENDS += "${PYTHON_PN}-pyyaml-native"
-DEPENDS += "${PYTHON_PN}-native"
-DEPENDS += "${PYTHON_PN}-sdbus++-native"
-DEPENDS += "sdbusplus"
-DEPENDS += "phosphor-dbus-interfaces"
-DEPENDS += "virtual/phosphor-logging-callouts"
-DEPENDS += "libcereal"
-DEPENDS += "sdeventplus"
-DEPENDS += "packagegroup-obmc-yaml-providers"
-DEPENDS += "dbus"
-SRCREV = "e1e859799ce9b9167655c895b5fc5191e90be780"
+DEPENDS += " \
+    ${PYTHON_PN}-mako-native \
+    ${PYTHON_PN}-native \
+    ${PYTHON_PN}-pyyaml-native \
+    ${PYTHON_PN}-sdbus++-native \
+    cli11 \
+    dbus \
+    libcereal \
+    nlohmann-json \
+    packagegroup-obmc-yaml-providers \
+    phosphor-dbus-interfaces \
+    sdbusplus \
+    sdeventplus \
+    systemd \
+    virtual/phosphor-logging-callouts \
+    "
+SRCREV = "383e9c1c1f439f40dd85bb8d75c34416f91106a4"
 PACKAGECONFIG ??= ""
 PACKAGECONFIG[openpower-pels] = " \
         -Dopenpower-pel-extension=enabled, \
         -Dopenpower-pel-extension=disabled, \
-        nlohmann-json cli11 libpldm python3, \
+        libpldm python3, \
         python3, \
         "
+PACKAGECONFIG[redundant-bmc] = " \
+        -Dredundant-bmc=true, \
+        -Dredundant-bmc=false \
+        "
+
+PACKAGECONFIG:append = " ${@bb.utils.contains('MACHINE_FEATURES', 'redundant-bmc', 'redundant-bmc', '', d)}"
+
 PV = "1.0+git${SRCPV}"
 PR = "r1"
 
 SRC_URI = "git://github.com/openbmc/phosphor-logging;branch=master;protocol=https"
 
 SYSTEMD_PACKAGES = "${LOGGING_PACKAGES}"
-S = "${WORKDIR}/git"
 
 inherit pkgconfig meson
 inherit python3native

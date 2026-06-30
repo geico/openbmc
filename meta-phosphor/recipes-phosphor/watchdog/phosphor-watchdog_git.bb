@@ -17,15 +17,14 @@ DEPENDS += "phosphor-logging"
 DEPENDS += "systemd"
 
 SRC_URI = "git://github.com/openbmc/phosphor-watchdog;branch=master;protocol=https"
-SRCREV = "923a9080fdbed58d233b307a1f9e6965530ddfa1"
-S = "${WORKDIR}/git"
+SRCREV = "9a7a89fe6b74822d0601e98232e82a2583d4f4a7"
 
 EXTRA_OEMESON = " \
         -Dtests=disabled \
         "
 
 # Copies config file having arguments for host watchdog
-SYSTEMD_ENVIRONMENT_FILE:${PN} +="obmc/watchdog/poweron"
+SYSTEMD_ENVIRONMENT_FILE:${PN} += "obmc/watchdog/poweron"
 
 # Install the override to set up a Conflicts relation
 SYSTEMD_OVERRIDE:${PN} += "poweron.conf:phosphor-watchdog@poweron.service.d/poweron.conf"

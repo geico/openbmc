@@ -48,6 +48,9 @@ PACKAGECONFIG[monitor] = "-Dmonitor-service=enabled \
     phosphor-fan-monitor-config \
     , \
 "
+RDEPENDS:${PN}-monitor:append = " \
+    ${@bb.utils.contains('PACKAGECONFIG', 'sensor-monitor', '${PN}-sensor-monitor', '', d)} \
+"
 # --------------------------------------
 # phosphor-cooling-type specific configuration
 PACKAGECONFIG[cooling-type] = "-Dcooling-type-service=enabled,-Dcooling-type-service=disabled,,"
@@ -56,8 +59,6 @@ PACKAGECONFIG[cooling-type] = "-Dcooling-type-service=enabled,-Dcooling-type-ser
 PACKAGECONFIG[sensor-monitor] = "-Dsensor-monitor-service=enabled,-Dsensor-monitor-service=disabled"
 PV = "1.0+git${SRCPV}"
 PR = "r1"
-
-S = "${WORKDIR}/git"
 
 # OBMC_CHASSIS_ZERO_ONLY: hacky way to fix the templates until
 # openbmc/phosphor-fan-presence#26 is resolved.  This should likely be
@@ -114,7 +115,10 @@ FILES:${PN}-monitor = "${bindir}/phosphor-fan-monitor"
 # Package the JSON config files installed from the repo
 FILES:${PN}-monitor += "${@bb.utils.contains('PACKAGECONFIG', 'json', \
     '${datadir}/phosphor-fan-presence/monitor/*', '', d)}"
-FILES:${PN}-sensor-monitor += " ${bindir}/sensor-monitor"
+FILES:${PN}-sensor-monitor += " \
+    ${bindir}/sensor-monitor \
+    ${@bb.utils.contains('PACKAGECONFIG', 'json', '${datadir}/phosphor-fan-presence/sensor-monitor/*', '', d)} \
+"
 
 require ${BPN}.inc
 

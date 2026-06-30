@@ -16,7 +16,6 @@ PR = "r1"
 SRC_URI += "file://of-name-to-eeprom.sh"
 
 SYSTEMD_SERVICE:${PN} += "obmc-read-eeprom@.service"
-S = "${WORKDIR}/git"
 
 inherit meson pkgconfig
 inherit obmc-phosphor-systemd
@@ -27,7 +26,6 @@ inherit python3native
 IPMI_FRU_YAML ?= "${STAGING_DIR_NATIVE}${config_datadir}/config.yaml"
 IPMI_FRU_PROP_YAML ?= "${STAGING_DIR_NATIVE}${properties_datadir}/extra-properties.yaml"
 
-
 EXTRA_OEMESON = " \
         -Dfru_yaml=${IPMI_FRU_YAML} \
         -Dproperties_yaml=${IPMI_FRU_PROP_YAML} \
@@ -35,7 +33,7 @@ EXTRA_OEMESON = " \
 
 do_install:append() {
         install -d ${D}${bindir}
-        install -m 0755 ${WORKDIR}/of-name-to-eeprom.sh ${D}${bindir}
+        install -m 0755 ${UNPACKDIR}/of-name-to-eeprom.sh ${D}${bindir}
 }
 
 RDEPENDS:${PN} += "bash"

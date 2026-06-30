@@ -11,7 +11,7 @@ SRC_URI += " \
   file://gbmc-ip-monitor-test.sh \
   "
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 DEPENDS += "test-sh"
 
@@ -23,7 +23,7 @@ RDEPENDS:${PN} += " \
 SYSTEMD_SERVICE:${PN} += "gbmc-ip-monitor.service"
 
 do_compile() {
-  SYSROOT="$PKG_CONFIG_SYSROOT_DIR" bash gbmc-ip-monitor-test.sh || exit
+  SYSROOT="${STAGING_DIR_HOST}" bash gbmc-ip-monitor-test.sh || exit
 }
 
 do_install:append() {

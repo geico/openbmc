@@ -16,7 +16,7 @@ DEPENDS += " \
 
 PROVIDES += "virtual/openpower-fru-properties"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 do_install() {
         DEST=${D}${properties_datadir}

@@ -10,7 +10,7 @@ SRC_URI += "file://callouts.yaml"
 
 PROVIDES += "virtual/phosphor-logging-callouts"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 do_install() {
         DEST=${D}${callouts_datadir}

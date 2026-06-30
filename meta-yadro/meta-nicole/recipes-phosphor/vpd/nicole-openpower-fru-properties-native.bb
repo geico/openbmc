@@ -10,7 +10,7 @@ SRC_URI += "file://properties.yaml"
 
 PROVIDES += "virtual/openpower-fru-properties"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}/sources"
 
 do_install() {
         DEST=${D}${properties_datadir}

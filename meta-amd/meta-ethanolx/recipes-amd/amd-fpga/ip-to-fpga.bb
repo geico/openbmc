@@ -9,7 +9,7 @@ SRC_URI = " file://ip-to-fpga.sh \
             file://ip-to-fpga.service \
           "
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 DEPENDS = "systemd"
 RDEPENDS:${PN} = "bash"

@@ -10,7 +10,6 @@ PR = "r1"
 SRC_URI += "git://github.com/jk-ozlabs/fbterm.git;branch=master;protocol=https"
 SRC_URI += "file://fb.modes"
 
-S = "${WORKDIR}/git"
 SYSTEMD_SERVICE:${PN} += "fbterm.service"
 SYSTEMD_ENVIRONMENT_FILE:${PN} += "fbterm"
 
@@ -21,5 +20,5 @@ inherit obmc-phosphor-systemd
 do_install() {
     oe_runmake 'DESTDIR=${D}' install-exec
     install -d ${D}${sysconfdir}/
-    install -m 0644 ${WORKDIR}/fb.modes ${D}${sysconfdir}/
+    install -m 0644 ${UNPACKDIR}/fb.modes ${D}${sysconfdir}/
 }

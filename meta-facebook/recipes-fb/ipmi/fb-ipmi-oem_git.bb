@@ -5,9 +5,8 @@ LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=9e69ba356fa59848ffd865152a3ccc13"
 
 SRC_URI = "git://github.com/openbmc/fb-ipmi-oem;branch=master;protocol=https"
-SRCREV = "d8d95a3d35071cfef54b519db4a7ffb5beb4b5bf"
+SRCREV = "0d3d62544f6951d301fb8fcdbf5f644f3b2adcc3"
 
-S = "${WORKDIR}/git"
 PV = "0.1+git${SRCPV}"
 
 DEPENDS = "boost phosphor-ipmi-host phosphor-logging systemd "
@@ -19,7 +18,7 @@ PACKAGECONFIG:fb-compute-multihost ??= "bic"
 
 PACKAGECONFIG[bic] = "-Dbic=enabled,-Dbic=disabled"
 
-EXTRA_OEMESON="\
+EXTRA_OEMESON = "\
     -Dtests=disabled \
     -Dmachine='${MACHINE}' \
     -Dhost-instances='${OBMC_HOST_INSTANCES}' \

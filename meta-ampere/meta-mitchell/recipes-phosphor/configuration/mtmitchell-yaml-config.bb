@@ -9,7 +9,7 @@ SRC_URI = " \
            file://mtmitchell-ipmi-fru.yaml \
           "
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}/sources"
 
 do_install() {
     install -m 0644 -D mtmitchell-ipmi-sensors.yaml \

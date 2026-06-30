@@ -1,8 +1,0 @@
-header:
-  version: 14
-  includes:
-    - ci/meta-openembedded.yml
-
-repos:
-  meta-virtualization:
-    url: https://git.yoctoproject.org/meta-virtualization

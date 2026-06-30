@@ -11,7 +11,7 @@ SRC_URI = " \
     file://daytonax-ipmi-sensors.yaml \
     "
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 do_install() {
     cat daytonax-ipmi-fru.yaml > fru-read.yaml

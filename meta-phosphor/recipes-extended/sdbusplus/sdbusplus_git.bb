@@ -8,10 +8,10 @@ DEPENDS += " \
         ${PYTHON_PN}-mako-native \
         ${PYTHON_PN}-pyyaml-native \
         boost \
+        nlohmann-json \
+        stdexec \
         systemd \
         "
-
-S = "${WORKDIR}/git"
 
 inherit pkgconfig meson
 inherit python3native

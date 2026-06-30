@@ -14,7 +14,7 @@ RPROVIDES:${PN} += 'virtual-obmc-host-ctl'
 RDEPENDS:${PN} += "op-proc-control \
                    op-proc-control-systemd-links"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 TMPL = "start_host@.service"
 INSTFMT = "start_host@{0}.service"
@@ -22,4 +22,4 @@ TGTFMT = "obmc-host-startmin@{0}.target"
 FMT = "../${TMPL}:${TGTFMT}.requires/${INSTFMT}"
 
 SYSTEMD_SERVICE:${PN} += "${TMPL}"
-SYSTEMD_LINK:${PN} += "${@compose_list(d, 'FMT', 'OBMC_CHASSIS_INSTANCES')}"
+SYSTEMD_LINK:${PN} += "${@compose_list(d, 'FMT', 'OBMC_HOST_INSTANCES')}"

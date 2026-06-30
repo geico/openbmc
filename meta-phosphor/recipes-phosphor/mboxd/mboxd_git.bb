@@ -6,7 +6,7 @@ DEPENDS += "autoconf-archive-native"
 DEPENDS += "systemd"
 DEPENDS += "phosphor-logging"
 PROVIDES += "mboxctl"
-SRCREV = "77692f50a316b3fd56ec593c1180e8ac15251770"
+SRCREV = "414f40cd4b80595b10d0d6d93325760e809a8ae5"
 # Enable virtual-pnor by DISTRO_FEATURE openpower-virtual-pnor.
 PACKAGECONFIG:append:df-openpower-virtual-pnor = " virtual-pnor"
 PACKAGECONFIG[virtual-pnor] = "--enable-virtual-pnor,--disable-virtual-pnor"
@@ -16,7 +16,6 @@ PR = "r1"
 SRC_URI = "git://github.com/openbmc/hiomapd.git;branch=master;protocol=https"
 SRC_URI += "file://99-aspeed-lpc-ctrl.rules"
 
-S = "${WORKDIR}/git"
 SYSTEMD_SUBSTITUTIONS += "FLASH_SIZE:${MBOXD_FLASH_SIZE}:${PN}.service"
 SYSTEMD_SUBSTITUTIONS += "WINDOW_NUM:${MBOXD_WINDOW_NUM}:${PN}.service"
 SYSTEMD_SERVICE:${PN} += "mboxd.service"
@@ -29,7 +28,7 @@ inherit obmc-phosphor-systemd
 
 do_install:append() {
     install -d ${D}/${nonarch_base_libdir}/udev/rules.d
-    install -m 0644 ${WORKDIR}/99-aspeed-lpc-ctrl.rules ${D}/${nonarch_base_libdir}/udev/rules.d
+    install -m 0644 ${UNPACKDIR}/99-aspeed-lpc-ctrl.rules ${D}/${nonarch_base_libdir}/udev/rules.d
 }
 
 MBOXD_FLASH_SIZE ??= "32M"

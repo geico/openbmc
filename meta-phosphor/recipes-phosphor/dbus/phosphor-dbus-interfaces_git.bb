@@ -7,13 +7,11 @@ DEPENDS += " \
         sdbusplus \
         systemd \
         "
-SRCREV = "15bc3117d3b05d7e6d7d490401b9122668f005be"
+SRCREV = "e5cafef0032e7b7e93624ea8642f06a56b14bf35"
 PV = "1.0+git${SRCPV}"
 PR = "r1"
 
 SRC_URI = "git://github.com/openbmc/phosphor-dbus-interfaces;branch=master;protocol=https"
-
-S = "${WORKDIR}/git"
 
 inherit pkgconfig meson
 inherit obmc-phosphor-utils
@@ -24,6 +22,10 @@ inherit python3native
 # add them to the 'doc' subpackage.
 FILES:${PN}-doc += "${datadir}/${BPN}"
 
+# Create separate packages for Redfish registry.
+PACKAGES:append = " ${PN}-redfish-registry"
+FILES:${PN}-redfish-registry += "${datadir}/redfish-registry/${BPN}"
+
 # Process OBMC_ORG_YAML_SUBDIRS to create Meson config options.
 # ex. xyz/openbmc_project -> -Ddata_xyz_openbmc_project=true
 def pdi_meson_config(d):
@@ -33,10 +35,14 @@ def pdi_meson_config(d):
         ])
 pdi_meson_config[vardeps] = "OBMC_ORG_YAML_SUBDIRS"
 EXTRA_OEMESON += "${@pdi_meson_config(d)}"
-# Remove all schemas by default regardless of the meson_options.txt config
+# Remove all schemas by default regardless of the meson.options config
 do_write_config:append() {
-    for intf in $(grep "^option('data_" ${S}/meson_options.txt | sed "s,^.*\(data_[^']*\).*$,\1,"); do
+    for intf in $(grep "^option('data_" ${S}/meson.options | sed "s,^.*\(data_[^']*\).*$,\1,"); do
         sed -i "/^\[built-in options\]\$/a$intf = false" ${WORKDIR}/meson.cross
     done
 }
-do_write_config[deptask] += "do_unpack"
+
+# The write-config needs to happen after the unpack and patch steps.
+# Unpack is what creates the original source.  Someone could apply patches to
+# the repository that affects meson.options.
+addtask write_config after do_unpack do_patch before do_configure

@@ -10,7 +10,7 @@ SRC_URI += "file://inventory"
 
 PROVIDES += "virtual/openpower-fru-inventory"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}/sources"
 
 do_install() {
         DEST=${D}${inventory_datadir_native}

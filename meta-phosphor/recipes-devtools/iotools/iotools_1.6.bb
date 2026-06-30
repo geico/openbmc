@@ -5,9 +5,8 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=751419260aa954499f7abaabaa882bbe"
 SRCREV = "8d928b3360246b8ead95b442ca3887ce8b8f942f"
 PV = "v1.6+git${SRCPV}"
 
-SRC_URI = "git://git@github.com/jonmayergoogle/iotools.git;protocol=https;branch=master"
+SRC_URI = "git://github.com/jonmayergoogle/iotools.git;protocol=https;branch=master"
 
-S = "${WORKDIR}/git"
 SYSTEMD_SERVICE:${PN} += "iotools-setup.service"
 
 inherit obmc-phosphor-systemd

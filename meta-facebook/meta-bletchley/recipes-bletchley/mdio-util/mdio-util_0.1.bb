@@ -8,7 +8,7 @@ RDEPENDS:${PN} += "bash"
 SRC_URI += " \
         file://mdio-util \
 "
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 do_install() {
         install -d ${D}${sbindir}

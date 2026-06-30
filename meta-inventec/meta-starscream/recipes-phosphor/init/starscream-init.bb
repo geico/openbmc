@@ -10,12 +10,11 @@ inherit obmc-phosphor-systemd
 DEPENDS += "systemd"
 RDEPENDS:${PN} += "libsystemd"
 
-
 FILESEXTRAPATHS:prepend := "${THISDIR}/starscream-init:"
 SRC_URI += "file://starscream-init.sh \
 "
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}/sources"
 
 do_install() {
         install -d ${D}${sbindir}

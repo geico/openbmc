@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/Apache-2.0;md5
 inherit allarch
 inherit phosphor-inventory-manager
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 SRC_URI = "file://inventory-cleanup.yaml"
 

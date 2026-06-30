@@ -10,7 +10,6 @@ PR = "r1"
 SRC_URI = "git://github.com/jk-ozlabs/uart-render-controller;branch=master;protocol=https"
 SRC_URI += "file://uart-render-controller.service"
 
-S = "${WORKDIR}/git"
 SYSTEMD_SERVICE:${PN} += "uart-render-controller.service"
 
 inherit autotools
@@ -19,7 +18,7 @@ inherit systemd
 
 do_install:append() {
     install -d ${D}${systemd_system_unitdir}
-    install -m 0644 ${WORKDIR}/uart-render-controller.service ${D}${systemd_system_unitdir}/
+    install -m 0644 ${UNPACKDIR}/uart-render-controller.service ${D}${systemd_system_unitdir}/
 }
 
 RDEPENDS:${PN} += "fbterm"

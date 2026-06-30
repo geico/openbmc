@@ -17,12 +17,13 @@ PV = "1.0"
 
 PYPI_PACKAGE = "sdbusplus"
 
-S = "${WORKDIR}/git/tools"
+S = "${UNPACKDIR}/${BP}/tools"
 
-inherit setuptools3
+inherit python_setuptools_build_meta
 
 RDEPENDS:${PN} += " \
     ${PYTHON_PN}-inflection \
+    ${PYTHON_PN}-jsonschema \
     ${PYTHON_PN}-mako \
     ${PYTHON_PN}-pyyaml \
     "

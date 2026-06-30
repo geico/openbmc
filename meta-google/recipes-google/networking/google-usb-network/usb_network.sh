@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# shellcheck source=meta-google/recipes-google/networking/gbmc-net-common/gbmc-net-lib.sh
+source /usr/share/gbmc-net-lib.sh || exit
 
 # List of options the script accepts. Trailing column means that the option
 # requires an argument.
@@ -26,6 +28,7 @@ ARGUMENT_LIST=(
     "dev-type:"
     "gadget-dir-name:"
     "iface-name:"
+    "iface-alias:"
 )
 
 print_usage() {
@@ -40,6 +43,7 @@ $0 [OPTIONS] [stop|start]
         --bind-device Name of the device to bind, as listed in /sys/class/udc/
         --gadget-dir-name Optional base name for gadget directory. Default: iface-name
         --iface-name name of the network interface.
+        --iface-alias alias name of the network interface.
         --help  Print this help and exit.
 HELP
 }
@@ -52,6 +56,16 @@ gadget_start() {
 Name=${IFACE_NAME}
 EOF
 
+    if [[ -n $IFACE_ALIAS ]]; then
+        cat >/run/systemd/network/+-bmc-"${IFACE_NAME}".link <<EOF
+[Match]
+OriginalName=${IFACE_NAME}
+
+[Link]
+Alias=${IFACE_ALIAS}
+EOF
+    fi
+
     # Add the gbmcbr configuration if this is a relevant device
     if (( ID_VENDOR == 0x18d1 && ID_PRODUCT == 0x22b )); then
         cat >>/run/systemd/network/+-bmc-"${IFACE_NAME}".network <<EOF
@@ -62,8 +76,19 @@ Cost=85
 EOF
     fi
 
+    # Add standard l2 bridge configuration if this is a relevant device
+    if (( ID_VENDOR == 0x18d1 && ID_PRODUCT == 0x22c )); then
+        cat >>/run/systemd/network/+-bmc-"${IFACE_NAME}".network <<EOF
+[Network]
+Bridge=l2br
+[Bridge]
+Cost=85
+EOF
+    fi
+
     # Ignore any failures due to systemd being unavailable at boot
-    networkctl reload || true
+    # shellcheck disable=SC2119
+    gbmc_net_networkd_reload || true
 
     local gadget_dir="${CONFIGFS_HOME}/usb_gadget/${GADGET_DIR_NAME}"
     mkdir -p "${gadget_dir}" || return
@@ -108,6 +133,10 @@ EOF
             ip link set dev "$ifname" name "${IFACE_NAME}" && break
         sleep 1
     done
+    if [[ -n $IFACE_ALIAS ]]; then
+        ip link set dev "$IFACE_NAME" alias "$IFACE_ALIAS" || return
+    fi
+
     ip link set dev "$IFACE_NAME" up || return
 }
 
@@ -121,7 +150,9 @@ gadget_stop() {
       "${gadget_dir}" || true
 
     rm -f /run/systemd/network/+-bmc-"${IFACE_NAME}".network
-    networkctl reload || true
+    rm -f /run/systemd/network/+-bmc-"${IFACE_NAME}".link
+    # shellcheck disable=SC2119
+    gbmc_net_networkd_reload || true
 }
 
 opts="$(getopt \
@@ -179,6 +210,10 @@ while [[ $# -gt 0 ]]; do
             IFACE_NAME=$2
             shift 2
             ;;
+        --iface-alias)
+            IFACE_ALIAS=$2
+            shift 2
+            ;;
         --help)
             print_usage
             exit 0
@@ -205,6 +240,22 @@ done
 if [ -z "$GADGET_DIR_NAME" ]; then
     GADGET_DIR_NAME="$IFACE_NAME"
 fi
+
+validate_safe_string() {
+    local name="$1"
+    local val="$2"
+    if [[ -n $val ]]; then
+        if [[ ! "$val" =~ ^[a-zA-Z0-9._-]+$ ]]; then
+            echo "Error: Invalid $name: '$val'. Only alphanumeric, _, and - are allowed." >&2
+            exit 1
+        fi
+    fi
+}
+
+validate_safe_string "iface-name" "$IFACE_NAME"
+validate_safe_string "gadget-dir-name" "$GADGET_DIR_NAME"
+validate_safe_string "dev-type" "$DEV_TYPE"
+
 
 if [[ $ACTION == "stop" ]]; then
     gadget_stop

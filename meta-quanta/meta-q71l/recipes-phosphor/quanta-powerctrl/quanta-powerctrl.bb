@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/Apache-2.0;md5
 inherit systemd
 inherit obmc-phosphor-systemd
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 SRC_URI = "file://init_once.sh \
            file://poweroff.sh \
