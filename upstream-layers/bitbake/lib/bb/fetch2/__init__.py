@@ -51,7 +51,7 @@ class UntrustedUrl(BBFetchException):
     """Exception raised when encountering a host not listed in BB_ALLOWED_NETWORKS"""
     def __init__(self, url, message=''):
         if message:
-            msg = message
+            msg = str(message)
         else:
             msg = "The URL: '%s' is not trusted and cannot be used" % url
         self.url = url
@@ -911,6 +911,7 @@ FETCH_EXPORT_VARS = ['HOME', 'PATH',
                      'SSL_CERT_FILE',
                      'NODE_EXTRA_CA_CERTS',
                      'AWS_PROFILE',
+                     'AWS_SHARED_CREDENTIALS_FILE',
                      'AWS_ACCESS_KEY_ID',
                      'AWS_SECRET_ACCESS_KEY',
                      'AWS_ROLE_ARN',
