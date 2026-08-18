@@ -6,8 +6,6 @@ SRC_URI:append = " \
     file://phosphor-multi-gpio-monitor.json \
     file://reset_btn \
     file://reset_btn@.service \
-    file://assert-host-ready.service \
-    file://deassert-host-ready.service \
     file://assert-power-good-drop \
     file://assert-power-good-drop.service \
     file://deassert-power-good-drop \
@@ -36,8 +34,6 @@ FILES:${PN} += "${systemd_system_unitdir}/*"
 
 SYSTEMD_SERVICE:${PN} += " \
     reset_btn@.service \
-    assert-host-ready.service \
-    deassert-host-ready.service \
     assert-power-good-drop.service \
     deassert-power-good-drop.service \
     thermal-assert-log@.service \

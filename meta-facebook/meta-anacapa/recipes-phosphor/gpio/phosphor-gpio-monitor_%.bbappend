@@ -21,10 +21,8 @@ SERVICE_LIST = "assert-post-end.service \
 SERVICE_FILE_FMT = "file://{0}"
 
 SRC_URI += " \
-    file://assert-post-end \
     file://assert-power-good-drop \
     file://bind-apml-driver \
-    file://deassert-post-end \
     file://deassert-power-good-drop \
     file://multi-gpios-sys-init \
     file://plat-phosphor-multi-gpio-monitor.json \
@@ -57,10 +55,8 @@ do_install:append() {
     done
 
     install -d ${D}${libexecdir}/${PN}
-    install -m 0755 ${UNPACKDIR}/assert-post-end ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/assert-power-good-drop ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/bind-apml-driver ${D}${libexecdir}/${PN}/
-    install -m 0755 ${UNPACKDIR}/deassert-post-end ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/deassert-power-good-drop ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/multi-gpios-sys-init ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/power-rail-event-logger ${D}${libexecdir}/${PN}/

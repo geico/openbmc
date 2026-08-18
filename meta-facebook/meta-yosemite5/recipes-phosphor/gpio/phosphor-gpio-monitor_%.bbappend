@@ -8,8 +8,8 @@ SRC_URI += "file://phosphor-multi-gpio-monitor.json \
             file://reset_btn@.service \
             file://multi-gpios-sys-init \
             file://multi-gpios-sys-init.service \
-            file://assert-host-ready.service \
-            file://deassert-host-ready.service \
+            file://assert-post-end.service \
+            file://deassert-post-end.service \
             file://assert-power-good-drop \
             file://assert-power-good-drop.service \
             file://deassert-power-good-drop \
@@ -47,8 +47,8 @@ FILES:${PN} += "${systemd_system_unitdir}/*"
 SYSTEMD_SERVICE:${PN} += " \
     reset_btn@.service \
     multi-gpios-sys-init.service \
-    assert-host-ready.service \
-    deassert-host-ready.service \
+    assert-post-end.service \
+    deassert-post-end.service \
     assert-power-good-drop.service \
     deassert-power-good-drop.service \
     gpio_bypass@.service \
