@@ -750,8 +750,8 @@
         "LineName": "P12V_INA230_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@cmm_p12v-ina230-alert.service"],
-            "FALLING": ["vr-fault-assert-log@cmm_p12v-ina230-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_CMM-p12v-ina230-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_CMM-p12v-ina230-alert.service"]
         },
         "Continue": true
     },
@@ -760,8 +760,8 @@
         "LineName": "P24V_INA230_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@cmm_p24v-ina230-alert.service"],
-            "FALLING": ["vr-fault-assert-log@cmm_p24v-ina230-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_CMM-p24v-ina230-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_CMM-p24v-ina230-alert.service"]
         },
         "Continue": true
     },
@@ -770,8 +770,8 @@
         "LineName": "P48V_HSC_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@cmm_p48v-hsc-alert.service"],
-            "FALLING": ["vr-fault-assert-log@cmm_p48v-hsc-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_CMM-p48v-hsc-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_CMM-p48v-hsc-alert.service"]
         },
         "Continue": true
     },
@@ -780,8 +780,8 @@
         "LineName": "P1V05_PWR_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@cmm_p1v05.service"],
-            "FALLING": ["vr-fault-deassert-log@cmm_p1v05.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_CMM-p1v05.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_CMM-p1v05.service"]
         },
         "Continue": true
     },
@@ -790,8 +790,8 @@
         "LineName": "P1V5_PWR_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@cmm_p1v5.service"],
-            "FALLING": ["vr-fault-deassert-log@cmm_p1v5.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_CMM-p1v5.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_CMM-p1v5.service"]
         },
         "Continue": true
     },
@@ -800,8 +800,8 @@
         "LineName": "P24V_PWR_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@cmm_p24v.service"],
-            "FALLING": ["vr-fault-deassert-log@cmm_p24v.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_CMM-p24v.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_CMM-p24v.service"]
         },
         "Continue": true
     },
@@ -810,8 +810,8 @@
         "LineName": "P24V_SM_PWR_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@cmm_p24v-smart-valve.service"],
-            "FALLING": ["vr-fault-deassert-log@cmm_p24v-smart-valve.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_CMM-p24v-smart-valve.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_CMM-p24v-smart-valve.service"]
         },
         "Continue": true
     },
@@ -820,8 +820,8 @@
         "LineName": "INA238_FAN1_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-1_ina238-fan1-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-1_ina238-fan1-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_1-ina238-fan1-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_1-ina238-fan1-alert.service"]
         },
         "Continue": true
     },
@@ -830,8 +830,8 @@
         "LineName": "INA238_FAN2_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-1_ina238-fan2-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-1_ina238-fan2-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_1-ina238-fan2-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_1-ina238-fan2-alert.service"]
         },
         "Continue": true
     },
@@ -840,8 +840,8 @@
         "LineName": "INA238_FAN3_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-1_ina238-fan3-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-1_ina238-fan3-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_1-ina238-fan3-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_1-ina238-fan3-alert.service"]
         },
         "Continue": true
     },
@@ -850,8 +850,8 @@
         "LineName": "INA238_FAN4_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-1_ina238-fan4-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-1_ina238-fan4-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_1-ina238-fan4-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_1-ina238-fan4-alert.service"]
         },
         "Continue": true
     },
@@ -860,8 +860,8 @@
         "LineName": "INA238_FAN5_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-2_ina238-fan5-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-2_ina238-fan5-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_2-ina238-fan5-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_2-ina238-fan5-alert.service"]
         },
         "Continue": true
     },
@@ -870,8 +870,8 @@
         "LineName": "INA238_FAN6_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-2_ina238-fan6-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-2_ina238-fan6-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_2-ina238-fan6-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_2-ina238-fan6-alert.service"]
         },
         "Continue": true
     },
@@ -880,8 +880,8 @@
         "LineName": "INA238_FAN7_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-2_ina238-fan7-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-2_ina238-fan7-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_2-ina238-fan7-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_2-ina238-fan7-alert.service"]
         },
         "Continue": true
     },
@@ -890,8 +890,8 @@
         "LineName": "INA238_FAN8_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-2_ina238-fan8-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-2_ina238-fan8-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_2-ina238-fan8-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_2-ina238-fan8-alert.service"]
         },
         "Continue": true
     },
@@ -900,8 +900,8 @@
         "LineName": "INA238_FAN9_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-3_ina238-fan9-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-3_ina238-fan9-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_3-ina238-fan9-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_3-ina238-fan9-alert.service"]
         },
         "Continue": true
     },
@@ -910,8 +910,8 @@
         "LineName": "INA238_FAN10_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-3_ina238-fan10-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-3_ina238-fan10-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_3-ina238-fan10-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_3-ina238-fan10-alert.service"]
         },
         "Continue": true
     },
@@ -920,8 +920,8 @@
         "LineName": "INA238_FAN11_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-3_ina238-fan11-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-3_ina238-fan11-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_3-ina238-fan11-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_3-ina238-fan11-alert.service"]
         },
         "Continue": true
     },
@@ -930,8 +930,8 @@
         "LineName": "INA238_FAN12_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-3_ina238-fan12-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-3_ina238-fan12-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_3-ina238-fan12-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_3-ina238-fan12-alert.service"]
         },
         "Continue": true
     },
@@ -940,8 +940,8 @@
         "LineName": "INA238_FAN13_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-4_ina238-fan13-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-4_ina238-fan13-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_4-ina238-fan13-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_4-ina238-fan13-alert.service"]
         },
         "Continue": true
     },
@@ -950,8 +950,8 @@
         "LineName": "INA238_FAN14_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-4_ina238-fan14-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-4_ina238-fan14-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_4-ina238-fan14-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_4-ina238-fan14-alert.service"]
         },
         "Continue": true
     },
@@ -960,8 +960,8 @@
         "LineName": "INA238_FAN15_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-4_ina238-fan15-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-4_ina238-fan15-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_4-ina238-fan15-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_4-ina238-fan15-alert.service"]
         },
         "Continue": true
     },
@@ -970,8 +970,8 @@
         "LineName": "INA238_FAN16_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-4_ina238-fan16-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-4_ina238-fan16-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_4-ina238-fan16-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_4-ina238-fan16-alert.service"]
         },
         "Continue": true
     },
@@ -980,8 +980,8 @@
         "LineName": "INA238_FAN17_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-5_ina238-fan17-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-5_ina238-fan17-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_5-ina238-fan17-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_5-ina238-fan17-alert.service"]
         },
         "Continue": true
     },
@@ -990,8 +990,8 @@
         "LineName": "INA238_FAN18_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-5_ina238-fan18-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-5_ina238-fan18-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_5-ina238-fan18-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_5-ina238-fan18-alert.service"]
         },
         "Continue": true
     },
@@ -1000,8 +1000,8 @@
         "LineName": "INA238_FAN19_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-5_ina238-fan19-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-5_ina238-fan19-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_5-ina238-fan19-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_5-ina238-fan19-alert.service"]
         },
         "Continue": true
     },
@@ -1010,8 +1010,8 @@
         "LineName": "INA238_FAN20_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-5_ina238-fan20-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-5_ina238-fan20-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_5-ina238-fan20-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_5-ina238-fan20-alert.service"]
         },
         "Continue": true
     },
@@ -1020,8 +1020,8 @@
         "LineName": "INA238_FAN21_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-6_ina238-fan21-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-6_ina238-fan21-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_6-ina238-fan21-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_6-ina238-fan21-alert.service"]
         },
         "Continue": true
     },
@@ -1030,8 +1030,8 @@
         "LineName": "INA238_FAN22_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-6_ina238-fan22-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-6_ina238-fan22-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_6-ina238-fan22-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_6-ina238-fan22-alert.service"]
         },
         "Continue": true
     },
@@ -1040,8 +1040,8 @@
         "LineName": "INA238_FAN23_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-6_ina238-fan23-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-6_ina238-fan23-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_6-ina238-fan23-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_6-ina238-fan23-alert.service"]
         },
         "Continue": true
     },
@@ -1050,8 +1050,8 @@
         "LineName": "INA238_FAN24_ALERT_N",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-deassert-log@fcb-6_ina238-fan24-alert.service"],
-            "FALLING": ["vr-fault-assert-log@fcb-6_ina238-fan24-alert.service"]
+            "RISING": ["vr-fault-deassert-log@Minerva_Fan_Board_6-ina238-fan24-alert.service"],
+            "FALLING": ["vr-fault-assert-log@Minerva_Fan_Board_6-ina238-fan24-alert.service"]
         },
         "Continue": true
     },
@@ -1060,8 +1060,8 @@
         "LineName": "FAN1_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-1_fan1.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-1_fan1.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_1-fan1.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_1-fan1.service"]
         },
         "Continue": true
     },
@@ -1070,8 +1070,8 @@
         "LineName": "FAN2_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-1_fan2.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-1_fan2.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_1-fan2.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_1-fan2.service"]
         },
         "Continue": true
     },
@@ -1080,8 +1080,8 @@
         "LineName": "FAN3_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-1_fan3.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-1_fan3.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_1-fan3.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_1-fan3.service"]
         },
         "Continue": true
     },
@@ -1090,8 +1090,8 @@
         "LineName": "FAN4_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-1_fan4.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-1_fan4.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_1-fan4.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_1-fan4.service"]
         },
         "Continue": true
     },
@@ -1100,8 +1100,8 @@
         "LineName": "FAN5_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-2_fan5.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-2_fan5.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_2-fan5.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_2-fan5.service"]
         },
         "Continue": true
     },
@@ -1110,8 +1110,8 @@
         "LineName": "FAN6_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-2_fan6.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-2_fan6.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_2-fan6.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_2-fan6.service"]
         },
         "Continue": true
     },
@@ -1120,8 +1120,8 @@
         "LineName": "FAN7_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-2_fan7.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-2_fan7.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_2-fan7.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_2-fan7.service"]
         },
         "Continue": true
     },
@@ -1130,8 +1130,8 @@
         "LineName": "FAN8_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-2_fan8.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-2_fan8.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_2-fan8.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_2-fan8.service"]
         },
         "Continue": true
     },
@@ -1140,8 +1140,8 @@
         "LineName": "FAN9_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-3_fan9.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-3_fan9.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_3-fan9.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_3-fan9.service"]
         },
         "Continue": true
     },
@@ -1150,8 +1150,8 @@
         "LineName": "FAN10_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-3_fan10.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-3_fan10.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_3-fan10.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_3-fan10.service"]
         },
         "Continue": true
     },
@@ -1160,8 +1160,8 @@
         "LineName": "FAN11_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-3_fan11.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-3_fan11.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_3-fan11.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_3-fan11.service"]
         },
         "Continue": true
     },
@@ -1170,8 +1170,8 @@
         "LineName": "FAN12_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-3_fan12.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-3_fan12.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_3-fan12.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_3-fan12.service"]
         },
         "Continue": true
     },
@@ -1180,8 +1180,8 @@
         "LineName": "FAN13_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-4_fan13.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-4_fan13.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_4-fan13.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_4-fan13.service"]
         },
         "Continue": true
     },
@@ -1190,8 +1190,8 @@
         "LineName": "FAN14_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-4_fan14.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-4_fan14.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_4-fan14.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_4-fan14.service"]
         },
         "Continue": true
     },
@@ -1200,8 +1200,8 @@
         "LineName": "FAN15_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-4_fan15.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-4_fan15.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_4-fan15.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_4-fan15.service"]
         },
         "Continue": true
     },
@@ -1210,8 +1210,8 @@
         "LineName": "FAN16_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-4_fan16.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-4_fan16.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_4-fan16.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_4-fan16.service"]
         },
         "Continue": true
     },
@@ -1220,8 +1220,8 @@
         "LineName": "FAN17_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-5_fan17.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-5_fan17.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_5-fan17.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_5-fan17.service"]
         },
         "Continue": true
     },
@@ -1230,8 +1230,8 @@
         "LineName": "FAN18_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-5_fan18.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-5_fan18.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_5-fan18.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_5-fan18.service"]
         },
         "Continue": true
     },
@@ -1240,8 +1240,8 @@
         "LineName": "FAN19_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-5_fan19.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-5_fan19.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_5-fan19.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_5-fan19.service"]
         },
         "Continue": true
     },
@@ -1250,8 +1250,8 @@
         "LineName": "FAN20_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-5_fan20.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-5_fan20.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_5-fan20.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_5-fan20.service"]
         },
         "Continue": true
     },
@@ -1260,8 +1260,8 @@
         "LineName": "FAN21_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-6_fan21.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-6_fan21.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_6-fan21.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_6-fan21.service"]
         },
         "Continue": true
     },
@@ -1270,8 +1270,8 @@
         "LineName": "FAN22_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-6_fan22.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-6_fan22.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_6-fan22.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_6-fan22.service"]
         },
         "Continue": true
     },
@@ -1280,8 +1280,8 @@
         "LineName": "FAN23_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-6_fan23.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-6_fan23.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_6-fan23.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_6-fan23.service"]
         },
         "Continue": true
     },
@@ -1290,8 +1290,8 @@
         "LineName": "FAN24_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-6_fan24.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-6_fan24.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_6-fan24.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_6-fan24.service"]
         },
         "Continue": true
     },
@@ -1300,8 +1300,8 @@
         "LineName": "FCB_1_P1V0_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-1_p1v0.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-1_p1v0.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_1-p1v0.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_1-p1v0.service"]
         },
         "Continue": true
     },
@@ -1310,8 +1310,8 @@
         "LineName": "FCB_2_P1V0_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-2_p1v0.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-2_p1v0.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_2-p1v0.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_2-p1v0.service"]
         },
         "Continue": true
     },
@@ -1320,8 +1320,8 @@
         "LineName": "FCB_3_P1V0_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-3_p1v0.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-3_p1v0.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_3-p1v0.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_3-p1v0.service"]
         },
         "Continue": true
     },
@@ -1330,8 +1330,8 @@
         "LineName": "FCB_4_P1V0_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-4_p1v0.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-4_p1v0.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_4-p1v0.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_4-p1v0.service"]
         },
         "Continue": true
     },
@@ -1340,8 +1340,8 @@
         "LineName": "FCB_5_P1V0_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-5_p1v0.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-5_p1v0.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_5-p1v0.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_5-p1v0.service"]
         },
         "Continue": true
     },
@@ -1350,8 +1350,8 @@
         "LineName": "FCB_6_P1V0_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-6_p1v0.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-6_p1v0.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_6-p1v0.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_6-p1v0.service"]
         },
         "Continue": true
     },
@@ -1360,8 +1360,8 @@
         "LineName": "FCB_1_P1V8_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-1_p1v8.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-1_p1v8.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_1-p1v8.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_1-p1v8.service"]
         },
         "Continue": true
     },
@@ -1370,8 +1370,8 @@
         "LineName": "FCB_2_P1V8_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-2_p1v8.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-2_p1v8.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_2-p1v8.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_2-p1v8.service"]
         },
         "Continue": true
     },
@@ -1380,8 +1380,8 @@
         "LineName": "FCB_3_P1V8_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-3_p1v8.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-3_p1v8.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_3-p1v8.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_3-p1v8.service"]
         },
         "Continue": true
     },
@@ -1390,8 +1390,8 @@
         "LineName": "FCB_4_P1V8_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-4_p1v8.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-4_p1v8.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_4-p1v8.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_4-p1v8.service"]
         },
         "Continue": true
     },
@@ -1400,8 +1400,8 @@
         "LineName": "FCB_5_P1V8_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-5_p1v8.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-5_p1v8.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_5-p1v8.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_5-p1v8.service"]
         },
         "Continue": true
     },
@@ -1410,8 +1410,8 @@
         "LineName": "FCB_6_P1V8_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-6_p1v8.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-6_p1v8.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_6-p1v8.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_6-p1v8.service"]
         },
         "Continue": true
     },
@@ -1420,8 +1420,8 @@
         "LineName": "FCB_1_P48V_ZONE0_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-1_p48v_zone0.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-1_p48v_zone0.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_1-p48v_zone0.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_1-p48v_zone0.service"]
         },
         "Continue": true
     },
@@ -1430,8 +1430,8 @@
         "LineName": "FCB_2_P48V_ZONE0_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-2_p48v_zone0.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-2_p48v_zone0.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_2-p48v_zone0.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_2-p48v_zone0.service"]
         },
         "Continue": true
     },
@@ -1440,8 +1440,8 @@
         "LineName": "FCB_3_P48V_ZONE0_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-3_p48v_zone0.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-3_p48v_zone0.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_3-p48v_zone0.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_3-p48v_zone0.service"]
         },
         "Continue": true
     },
@@ -1450,8 +1450,8 @@
         "LineName": "FCB_4_P48V_ZONE0_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-4_p48v_zone0.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-4_p48v_zone0.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_4-p48v_zone0.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_4-p48v_zone0.service"]
         },
         "Continue": true
     },
@@ -1460,8 +1460,8 @@
         "LineName": "FCB_5_P48V_ZONE0_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-5_p48v_zone0.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-5_p48v_zone0.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_5-p48v_zone0.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_5-p48v_zone0.service"]
         },
         "Continue": true
     },
@@ -1470,8 +1470,8 @@
         "LineName": "FCB_6_P48V_ZONE0_POWER_FAIL",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["vr-fault-assert-log@fcb-6_p48v_zone0.service"],
-            "FALLING": ["vr-fault-deassert-log@fcb-6_p48v_zone0.service"]
+            "RISING": ["vr-fault-assert-log@Minerva_Fan_Board_6-p48v_zone0.service"],
+            "FALLING": ["vr-fault-deassert-log@Minerva_Fan_Board_6-p48v_zone0.service"]
         },
         "Continue": true
     },

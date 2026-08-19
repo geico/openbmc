@@ -13,9 +13,6 @@ SRC_URI:append = " \
     file://thermal-event-logger \
     file://thermal-assert-log@.service \
     file://thermal-deassert-log@.service \
-    file://vr-fault-assert-log@.service \
-    file://vr-fault-deassert-log@.service \
-    file://vr-fault-event-logger \
     file://smc-assert-log@.service \
     file://smc-deassert-log@.service \
     file://smc-event-logger \
@@ -38,8 +35,6 @@ SYSTEMD_SERVICE:${PN} += " \
     deassert-power-good-drop.service \
     thermal-assert-log@.service \
     thermal-deassert-log@.service \
-    vr-fault-assert-log@.service \
-    vr-fault-deassert-log@.service \
     smc-assert-log@.service \
     smc-deassert-log@.service \
     power-rail-assert-log@.service \
@@ -61,7 +56,6 @@ do_install:append() {
     install -m 0755 ${UNPACKDIR}/assert-power-good-drop ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/deassert-power-good-drop ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/thermal-event-logger ${D}${libexecdir}/${PN}/
-    install -m 0755 ${UNPACKDIR}/vr-fault-event-logger ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/smc-event-logger ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/power-rail-event-logger ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/set-uart-select-led ${D}${libexecdir}/${PN}/

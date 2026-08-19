@@ -64,10 +64,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "vr-fault-deassert-log@FM_PVDDCR_CPU0_P0_OCP_N.service"
+                "vr-fault-deassert-log@Santabarbara_MB-FM_PVDDCR_CPU0_P0_OCP_N.service"
             ],
             "FALLING": [
-                "vr-fault-assert-log@FM_PVDDCR_CPU0_P0_OCP_N.service"
+                "vr-fault-assert-log@Santabarbara_MB-FM_PVDDCR_CPU0_P0_OCP_N.service"
             ]
         },
         "Continue": true
@@ -78,10 +78,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "vr-fault-deassert-log@FM_PVDDCR_CPU1_P0_OCP_N.service"
+                "vr-fault-deassert-log@Santabarbara_MB-FM_PVDDCR_CPU1_P0_OCP_N.service"
             ],
             "FALLING": [
-                "vr-fault-assert-log@FM_PVDDCR_CPU1_P0_OCP_N.service"
+                "vr-fault-assert-log@Santabarbara_MB-FM_PVDDCR_CPU1_P0_OCP_N.service"
             ]
         },
         "Continue": true
@@ -92,10 +92,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "vr-fault-deassert-log@FM_PVDDCR_SOC_P0_OCP_N.service"
+                "vr-fault-deassert-log@Santabarbara_MB-FM_PVDDCR_SOC_P0_OCP_N.service"
             ],
             "FALLING": [
-                "vr-fault-assert-log@FM_PVDDCR_SOC_P0_OCP_N.service"
+                "vr-fault-assert-log@Santabarbara_MB-FM_PVDDCR_SOC_P0_OCP_N.service"
             ]
         },
         "Continue": true
@@ -106,10 +106,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "vr-fault-deassert-log@FM_P3V3_NIC_400G_FAULT_R_N.service"
+                "vr-fault-deassert-log@Santabarbara_MB-FM_P3V3_NIC_400G_FAULT_R_N.service"
             ],
             "FALLING": [
-                "vr-fault-assert-log@FM_P3V3_NIC_400G_FAULT_R_N.service"
+                "vr-fault-assert-log@Santabarbara_MB-FM_P3V3_NIC_400G_FAULT_R_N.service"
             ]
         },
         "Continue": true
@@ -120,10 +120,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "vr-fault-deassert-log@FM_P3V3_NIC1_FAULT_N.service"
+                "vr-fault-deassert-log@Santabarbara_MB-FM_P3V3_NIC1_FAULT_N.service"
             ],
             "FALLING": [
-                "vr-fault-assert-log@FM_P3V3_NIC1_FAULT_N.service"
+                "vr-fault-assert-log@Santabarbara_MB-FM_P3V3_NIC1_FAULT_N.service"
             ]
         },
         "Continue": true
@@ -134,10 +134,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "vr-fault-deassert-log@FM_P3V3_NIC2_FAULT_N.service"
+                "vr-fault-deassert-log@Santabarbara_MB-FM_P3V3_NIC2_FAULT_N.service"
             ],
             "FALLING": [
-                "vr-fault-assert-log@FM_P3V3_NIC2_FAULT_N.service"
+                "vr-fault-assert-log@Santabarbara_MB-FM_P3V3_NIC2_FAULT_N.service"
             ]
         },
         "Continue": true
@@ -148,10 +148,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "vr-fault-deassert-log@FM_P3V3_NIC3_FAULT_N.service"
+                "vr-fault-deassert-log@Santabarbara_MB-FM_P3V3_NIC3_FAULT_N.service"
             ],
             "FALLING": [
-                "vr-fault-assert-log@FM_P3V3_NIC3_FAULT_N.service"
+                "vr-fault-assert-log@Santabarbara_MB-FM_P3V3_NIC3_FAULT_N.service"
             ]
         },
         "Continue": true
@@ -162,10 +162,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "vr-fault-deassert-log@FM_P3V3_NIC4_FAULT_N.service"
+                "vr-fault-deassert-log@Santabarbara_MB-FM_P3V3_NIC4_FAULT_N.service"
             ],
             "FALLING": [
-                "vr-fault-assert-log@FM_P3V3_NIC4_FAULT_N.service"
+                "vr-fault-assert-log@Santabarbara_MB-FM_P3V3_NIC4_FAULT_N.service"
             ]
         },
         "Continue": true
@@ -220,10 +220,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "vr-fault-deassert-log@FM_P3V3_E1S_0_FAULT_R_N.service"
+                "vr-fault-deassert-log@Santabarbara_MB-FM_P3V3_E1S_0_FAULT_R_N.service"
             ],
             "FALLING": [
-                "vr-fault-assert-log@FM_P3V3_E1S_0_FAULT_R_N.service"
+                "vr-fault-assert-log@Santabarbara_MB-FM_P3V3_E1S_0_FAULT_R_N.service"
             ]
         },
         "Continue": true
@@ -234,10 +234,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "vr-fault-deassert-log@FM_P3V3_E1S_1_FAULT_R_N.service"
+                "vr-fault-deassert-log@Santabarbara_MB-FM_P3V3_E1S_1_FAULT_R_N.service"
             ],
             "FALLING": [
-                "vr-fault-assert-log@FM_P3V3_E1S_1_FAULT_R_N.service"
+                "vr-fault-assert-log@Santabarbara_MB-FM_P3V3_E1S_1_FAULT_R_N.service"
             ]
         },
         "Continue": true
@@ -248,10 +248,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "vr-fault-deassert-log@FM_P3V3_E1S_2_FAULT_R_N.service"
+                "vr-fault-deassert-log@Santabarbara_MB-FM_P3V3_E1S_2_FAULT_R_N.service"
             ],
             "FALLING": [
-                "vr-fault-assert-log@FM_P3V3_E1S_2_FAULT_R_N.service"
+                "vr-fault-assert-log@Santabarbara_MB-FM_P3V3_E1S_2_FAULT_R_N.service"
             ]
         },
         "Continue": true
@@ -262,10 +262,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "vr-fault-deassert-log@FM_P3V3_E1S_3_FAULT_R_N.service"
+                "vr-fault-deassert-log@Santabarbara_MB-FM_P3V3_E1S_3_FAULT_R_N.service"
             ],
             "FALLING": [
-                "vr-fault-assert-log@FM_P3V3_E1S_3_FAULT_R_N.service"
+                "vr-fault-assert-log@Santabarbara_MB-FM_P3V3_E1S_3_FAULT_R_N.service"
             ]
         },
         "Continue": true
@@ -276,10 +276,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "vr-fault-deassert-log@FM_P3V3_E1S_4_FAULT_R_N.service"
+                "vr-fault-deassert-log@Santabarbara_MB-FM_P3V3_E1S_4_FAULT_R_N.service"
             ],
             "FALLING": [
-                "vr-fault-assert-log@FM_P3V3_E1S_4_FAULT_R_N.service"
+                "vr-fault-assert-log@Santabarbara_MB-FM_P3V3_E1S_4_FAULT_R_N.service"
             ]
         },
         "Continue": true
@@ -290,10 +290,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "vr-fault-deassert-log@E1S_0_P12V_ADC_R_ALERT.service"
+                "vr-fault-deassert-log@Santabarbara_MB-E1S_0_P12V_ADC_R_ALERT.service"
             ],
             "FALLING": [
-                "vr-fault-assert-log@E1S_0_P12V_ADC_R_ALERT.service"
+                "vr-fault-assert-log@Santabarbara_MB-E1S_0_P12V_ADC_R_ALERT.service"
             ]
         },
         "Continue": true
@@ -304,10 +304,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "vr-fault-deassert-log@FM_P12V_E1S_1_FAULT_R_N.service"
+                "vr-fault-deassert-log@Santabarbara_MB-FM_P12V_E1S_1_FAULT_R_N.service"
             ],
             "FALLING": [
-                "vr-fault-assert-log@FM_P12V_E1S_1_FAULT_R_N.service"
+                "vr-fault-assert-log@Santabarbara_MB-FM_P12V_E1S_1_FAULT_R_N.service"
             ]
         },
         "Continue": true
@@ -318,10 +318,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "vr-fault-deassert-log@FM_P12V_E1S_2_FAULT_R_N.service"
+                "vr-fault-deassert-log@Santabarbara_MB-FM_P12V_E1S_2_FAULT_R_N.service"
             ],
             "FALLING": [
-                "vr-fault-assert-log@FM_P12V_E1S_2_FAULT_R_N.service"
+                "vr-fault-assert-log@Santabarbara_MB-FM_P12V_E1S_2_FAULT_R_N.service"
             ]
         },
         "Continue": true
@@ -332,10 +332,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "vr-fault-deassert-log@FM_P12V_E1S_3_FAULT_R_N.service"
+                "vr-fault-deassert-log@Santabarbara_MB-FM_P12V_E1S_3_FAULT_R_N.service"
             ],
             "FALLING": [
-                "vr-fault-assert-log@FM_P12V_E1S_3_FAULT_R_N.service"
+                "vr-fault-assert-log@Santabarbara_MB-FM_P12V_E1S_3_FAULT_R_N.service"
             ]
         },
         "Continue": true
@@ -346,10 +346,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "vr-fault-deassert-log@FM_P12V_E1S_4_FAULT_R_N.service"
+                "vr-fault-deassert-log@Santabarbara_MB-FM_P12V_E1S_4_FAULT_R_N.service"
             ],
             "FALLING": [
-                "vr-fault-assert-log@FM_P12V_E1S_4_FAULT_R_N.service"
+                "vr-fault-assert-log@Santabarbara_MB-FM_P12V_E1S_4_FAULT_R_N.service"
             ]
         },
         "Continue": true
