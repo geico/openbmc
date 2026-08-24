@@ -55,10 +55,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "thermal-deassert-log@thermtrip_FM_CPU_THERMTRIP_N.service", "fault-led-deassert@FM_CPU_THERMTRIP_N.service"
+                "thermal-deassert-log@thermtrip-FM_CPU_THERMTRIP_N-FM_CPU_THERMTRIP_N.service", "fault-led-deassert@FM_CPU_THERMTRIP_N.service"
             ],
             "FALLING": [
-                "thermal-assert-log@thermtrip_FM_CPU_THERMTRIP_N.service", "fault-led-assert@FM_CPU_THERMTRIP_N.service"
+                "thermal-assert-log@thermtrip-FM_CPU_THERMTRIP_N-FM_CPU_THERMTRIP_N.service", "fault-led-assert@FM_CPU_THERMTRIP_N.service"
             ]
         },
         "Continue": true
@@ -69,10 +69,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "thermal-deassert-log@prochot_FM_CPU_PROCHOT_R_N.service", "fault-led-deassert@FM_CPU_PROCHOT_R_N.service"
+                "thermal-deassert-log@prochot-FM_CPU_PROCHOT_R_N-FM_CPU_PROCHOT_R_N.service", "fault-led-deassert@FM_CPU_PROCHOT_R_N.service"
             ],
             "FALLING": [
-                "thermal-assert-log@prochot_FM_CPU_PROCHOT_R_N.service", "fault-led-assert@FM_CPU_PROCHOT_R_N.service"
+                "thermal-assert-log@prochot-FM_CPU_PROCHOT_R_N-FM_CPU_PROCHOT_R_N.service", "fault-led-assert@FM_CPU_PROCHOT_R_N.service"
             ]
         },
         "Continue": true
@@ -251,10 +251,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "thermal-deassert-log@prochot_ALERT_THERMALTRIP_MCIO4A_N.service", "fault-led-deassert@ALERT_THERMALTRIP_MCIO4A_N.service"
+                "thermal-deassert-log@prochot-ALERT_THERMALTRIP_MCIO4A_N-ALERT_THERMALTRIP_MCIO4A_N.service", "fault-led-deassert@ALERT_THERMALTRIP_MCIO4A_N.service"
             ],
             "FALLING": [
-                "thermal-assert-log@prochot_ALERT_THERMALTRIP_MCIO4A_N.service", "fault-led-assert@ALERT_THERMALTRIP_MCIO4A_N.service"
+                "thermal-assert-log@prochot-ALERT_THERMALTRIP_MCIO4A_N-ALERT_THERMALTRIP_MCIO4A_N.service", "fault-led-assert@ALERT_THERMALTRIP_MCIO4A_N.service"
             ]
         },
         "Continue": true
@@ -363,10 +363,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "thermal-deassert-log@prochot_ALERT_INLET_TEMP_N.service", "fault-led-deassert@ALERT_INLET_TEMP_N.service"
+                "thermal-deassert-log@prochot-ALERT_INLET_TEMP_N-ALERT_INLET_TEMP_N.service", "fault-led-deassert@ALERT_INLET_TEMP_N.service"
             ],
             "FALLING": [
-                "thermal-assert-log@prochot_ALERT_INLET_TEMP_N.service", "fault-led-assert@ALERT_INLET_TEMP_N.service"
+                "thermal-assert-log@prochot-ALERT_INLET_TEMP_N-ALERT_INLET_TEMP_N.service", "fault-led-assert@ALERT_INLET_TEMP_N.service"
             ]
         },
         "Continue": true
@@ -377,10 +377,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "thermal-deassert-log@prochot_ALERT_OUTLET_TEMP_N.service", "fault-led-deassert@ALERT_OUTLET_TEMP_N.service"
+                "thermal-deassert-log@prochot-ALERT_OUTLET_TEMP_N-ALERT_OUTLET_TEMP_N.service", "fault-led-deassert@ALERT_OUTLET_TEMP_N.service"
             ],
             "FALLING": [
-                "thermal-assert-log@prochot_ALERT_OUTLET_TEMP_N.service", "fault-led-assert@ALERT_OUTLET_TEMP_N.service"
+                "thermal-assert-log@prochot-ALERT_OUTLET_TEMP_N-ALERT_OUTLET_TEMP_N.service", "fault-led-assert@ALERT_OUTLET_TEMP_N.service"
             ]
         },
         "Continue": true

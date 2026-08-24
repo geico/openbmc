@@ -31,7 +31,7 @@
         "Name": "SOC_THRMTRIP",
         "LineName": "SOC_THRMTRIP_N_CPLD",
         "EventMon": "FALLING",
-        "Target": "thermal-assert-log@thermtrip_SOC_THRMTRIP_N_CPLD.service",
+        "Target": "thermal-assert-log@thermtrip-SOC_THRMTRIP_N_CPLD-SOC_THRMTRIP_N_CPLD.service",
         "Continue": true
     },
     {

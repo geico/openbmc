@@ -36,10 +36,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "thermal-deassert-log@FM_CPU0_THERMTRIP_N.service"
+                "thermal-deassert-log@thermtrip-cpu0-FM_CPU0_THERMTRIP_N.service"
             ],
             "FALLING": [
-                "thermal-assert-log@FM_CPU0_THERMTRIP_N.service"
+                "thermal-assert-log@thermtrip-cpu0-FM_CPU0_THERMTRIP_N.service"
             ]
         },
         "Continue": true
@@ -50,10 +50,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "thermal-deassert-log@FM_CPU0_PROCHOT_N.service"
+                "thermal-deassert-log@prochot-cpu0-FM_CPU0_PROCHOT_N.service"
             ],
             "FALLING": [
-                "thermal-assert-log@FM_CPU0_PROCHOT_N.service"
+                "thermal-assert-log@prochot-cpu0-FM_CPU0_PROCHOT_N.service"
             ]
         },
         "Continue": true
