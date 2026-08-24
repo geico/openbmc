@@ -6,12 +6,12 @@
         "Targets": {
             "RISING": [
                 "deassert-power-good-drop.service",
-                "power-rail-deassert-log@FM_PWRGD_CPU0_PWROK.service"
+                "power-rail-deassert-log@Santabarbara_MB-FM_PWRGD_CPU0_PWROK.service"
             ],
             "FALLING": [
                 "assert-power-good-drop.service",
                 "mctp_remove.service",
-                "power-rail-assert-log@FM_PWRGD_CPU0_PWROK.service"
+                "power-rail-assert-log@Santabarbara_MB-FM_PWRGD_CPU0_PWROK.service"
             ]
         },
         "Continue": true
@@ -22,10 +22,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "power-rail-deassert-log@FM_RST_CPU0_RESETL_N.service"
+                "power-rail-deassert-log@Santabarbara_MB-FM_RST_CPU0_RESETL_N.service"
             ],
             "FALLING": [
-                "power-rail-assert-log@FM_RST_CPU0_RESETL_N.service"
+                "power-rail-assert-log@Santabarbara_MB-FM_RST_CPU0_RESETL_N.service"
             ]
         },
         "Continue": true
@@ -483,10 +483,10 @@
         "EventMon": "BOTH",
         "Targets": {
             "RISING": [
-                "power-rail-assert-log@PEX_SYS_ERR_FPGA.service"
+                "power-rail-assert-log@Santabarbara_MB-PEX_SYS_ERR_FPGA.service"
             ],
             "FALLING": [
-                "power-rail-deassert-log@PEX_SYS_ERR_FPGA.service"
+                "power-rail-deassert-log@Santabarbara_MB-PEX_SYS_ERR_FPGA.service"
             ]
         },
         "Continue": true

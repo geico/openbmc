@@ -16,9 +16,6 @@ SRC_URI:append = " \
     file://smc-assert-log@.service \
     file://smc-deassert-log@.service \
     file://smc-event-logger \
-    file://power-rail-assert-log@.service \
-    file://power-rail-deassert-log@.service \
-    file://power-rail-event-logger \
     file://uart-select-led@.service \
     file://set-uart-select-led \
     file://rainier-gpio-handler \
@@ -37,8 +34,6 @@ SYSTEMD_SERVICE:${PN} += " \
     thermal-deassert-log@.service \
     smc-assert-log@.service \
     smc-deassert-log@.service \
-    power-rail-assert-log@.service \
-    power-rail-deassert-log@.service \
     uart-select-led@.service \
     rainier-gpio-handler@.service \
     "
@@ -57,7 +52,6 @@ do_install:append() {
     install -m 0755 ${UNPACKDIR}/deassert-power-good-drop ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/thermal-event-logger ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/smc-event-logger ${D}${libexecdir}/${PN}/
-    install -m 0755 ${UNPACKDIR}/power-rail-event-logger ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/set-uart-select-led ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/rainier-gpio-handler ${D}${libexecdir}/${PN}/
 

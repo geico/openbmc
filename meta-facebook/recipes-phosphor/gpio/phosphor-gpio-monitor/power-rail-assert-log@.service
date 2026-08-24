@@ -3,5 +3,6 @@ Description=%i Power Rail Assert
 
 [Service]
 Type=oneshot
-ExecStart=/usr/libexec/phosphor-gpio-monitor/power-rail-event-logger "assert" "%i"
+ExecStart=/usr/libexec/phosphor-gpio-monitor/power-rail-event-logger assert "%i"
+
 SyslogIdentifier=%i-power-rail-assert

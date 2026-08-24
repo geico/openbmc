@@ -9,7 +9,8 @@ SERVICE_LIST = "assert-post-end.service \
                 deassert-post-end.service \
                 deassert-power-good-drop.service \
                 multi-gpios-sys-init.service \
-                power-rail-logger@.service \
+                power-rail-assert-log@.service \
+                power-rail-deassert-log@.service \
                 dimm-power-fault-logger@.service \
                 hpm-power-fault@.service \
                 thermal-event-logger@.service \

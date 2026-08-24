@@ -418,8 +418,8 @@
         "LineName": "Fault",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["power-rail-assert-log@mb_Fault.service", "fault-led-assert@Fault.service"],
-            "FALLING": ["power-rail-deassert-log@mb_Fault.service", "fault-led-deassert@Fault.service"]
+            "RISING": ["power-rail-assert-log@Yosemite5_MB-Fault.service", "fault-led-assert@Fault.service"],
+            "FALLING": ["power-rail-deassert-log@Yosemite5_MB-Fault.service", "fault-led-deassert@Fault.service"]
         },
         "Continue": true
     },
@@ -484,8 +484,8 @@
         "LineName": "FM_SLOT1_HSC_FAULT",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["power-rail-deassert-log@pdb_FM_SLOT1_HSC_FAULT.service"],
-            "FALLING": ["power-rail-assert-log@pdb_FM_SLOT1_HSC_FAULT.service"]
+            "RISING": ["power-rail-deassert-log@Yosemite5_Medusa_Board-FM_SLOT1_HSC_FAULT.service"],
+            "FALLING": ["power-rail-assert-log@Yosemite5_Medusa_Board-FM_SLOT1_HSC_FAULT.service"]
         },
         "Continue": true
     },
@@ -494,8 +494,8 @@
         "LineName": "FM_SLOT2_HSC_FAULT",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["power-rail-deassert-log@pdb_FM_SLOT2_HSC_FAULT.service"],
-            "FALLING": ["power-rail-assert-log@pdb_FM_SLOT2_HSC_FAULT.service"]
+            "RISING": ["power-rail-deassert-log@Yosemite5_Medusa_Board-FM_SLOT2_HSC_FAULT.service"],
+            "FALLING": ["power-rail-assert-log@Yosemite5_Medusa_Board-FM_SLOT2_HSC_FAULT.service"]
         },
         "Continue": true
     },
@@ -504,8 +504,8 @@
         "LineName": "FM_SLOT3_HSC_FAULT",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["power-rail-deassert-log@pdb_FM_SLOT3_HSC_FAULT.service"],
-            "FALLING": ["power-rail-assert-log@pdb_FM_SLOT3_HSC_FAULT.service"]
+            "RISING": ["power-rail-deassert-log@Yosemite5_Medusa_Board-FM_SLOT3_HSC_FAULT.service"],
+            "FALLING": ["power-rail-assert-log@Yosemite5_Medusa_Board-FM_SLOT3_HSC_FAULT.service"]
         },
         "Continue": true
     },
@@ -514,8 +514,8 @@
         "LineName": "FM_SLOT4_HSC_FAULT",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["power-rail-deassert-log@pdb_FM_SLOT4_HSC_FAULT.service"],
-            "FALLING": ["power-rail-assert-log@pdb_FM_SLOT4_HSC_FAULT.service"]
+            "RISING": ["power-rail-deassert-log@Yosemite5_Medusa_Board-FM_SLOT4_HSC_FAULT.service"],
+            "FALLING": ["power-rail-assert-log@Yosemite5_Medusa_Board-FM_SLOT4_HSC_FAULT.service"]
         },
         "Continue": true
     },
@@ -524,8 +524,8 @@
         "LineName": "FM_SLOT5_HSC_FAULT",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["power-rail-deassert-log@pdb_FM_SLOT5_HSC_FAULT.service"],
-            "FALLING": ["power-rail-assert-log@pdb_FM_SLOT5_HSC_FAULT.service"]
+            "RISING": ["power-rail-deassert-log@Yosemite5_Medusa_Board-FM_SLOT5_HSC_FAULT.service"],
+            "FALLING": ["power-rail-assert-log@Yosemite5_Medusa_Board-FM_SLOT5_HSC_FAULT.service"]
         },
         "Continue": true
     },
@@ -534,8 +534,8 @@
         "LineName": "FM_SLOT6_HSC_FAULT",
         "EventMon": "BOTH",
         "Targets": {
-            "RISING": ["power-rail-deassert-log@pdb_FM_SLOT6_HSC_FAULT.service"],
-            "FALLING": ["power-rail-assert-log@pdb_FM_SLOT6_HSC_FAULT.service"]
+            "RISING": ["power-rail-deassert-log@Yosemite5_Medusa_Board-FM_SLOT6_HSC_FAULT.service"],
+            "FALLING": ["power-rail-assert-log@Yosemite5_Medusa_Board-FM_SLOT6_HSC_FAULT.service"]
         },
         "Continue": true
     },

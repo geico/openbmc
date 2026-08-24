@@ -5,8 +5,8 @@
         "GpioNum": 56,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@mtia-blade-1_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@mtia-blade-1_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_MTIA_Blade_1-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_MTIA_Blade_1-pwrgd.service"]
         },
         "Continue": true
     },
@@ -16,8 +16,8 @@
         "GpioNum": 58,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@mtia-blade-2_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@mtia-blade-2_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_MTIA_Blade_2-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_MTIA_Blade_2-pwrgd.service"]
         },
         "Continue": true
     },
@@ -27,8 +27,8 @@
         "GpioNum": 60,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@mtia-blade-3_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@mtia-blade-3_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_MTIA_Blade_3-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_MTIA_Blade_3-pwrgd.service"]
         },
         "Continue": true
     },
@@ -38,8 +38,8 @@
         "GpioNum": 62,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@mtia-blade-4_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@mtia-blade-4_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_MTIA_Blade_4-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_MTIA_Blade_4-pwrgd.service"]
         },
         "Continue": true
     },
@@ -49,8 +49,8 @@
         "GpioNum": 64,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@mtia-blade-5_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@mtia-blade-5_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_MTIA_Blade_5-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_MTIA_Blade_5-pwrgd.service"]
         },
         "Continue": true
     },
@@ -60,8 +60,8 @@
         "GpioNum": 66,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@mtia-blade-6_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@mtia-blade-6_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_MTIA_Blade_6-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_MTIA_Blade_6-pwrgd.service"]
         },
         "Continue": true
     },
@@ -71,8 +71,8 @@
         "GpioNum": 68,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@mtia-blade-7_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@mtia-blade-7_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_MTIA_Blade_7-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_MTIA_Blade_7-pwrgd.service"]
         },
         "Continue": true
     },
@@ -82,8 +82,8 @@
         "GpioNum": 70,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@mtia-blade-8_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@mtia-blade-8_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_MTIA_Blade_8-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_MTIA_Blade_8-pwrgd.service"]
         },
         "Continue": true
     },
@@ -93,8 +93,8 @@
         "GpioNum": 72,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@mtia-blade-9_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@mtia-blade-9_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_MTIA_Blade_9-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_MTIA_Blade_9-pwrgd.service"]
         },
         "Continue": true
     },
@@ -104,8 +104,8 @@
         "GpioNum": 74,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@mtia-blade-10_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@mtia-blade-10_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_MTIA_Blade_10-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_MTIA_Blade_10-pwrgd.service"]
         },
         "Continue": true
     },
@@ -115,8 +115,8 @@
         "GpioNum": 76,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@mtia-blade-11_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@mtia-blade-11_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_MTIA_Blade_11-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_MTIA_Blade_11-pwrgd.service"]
         },
         "Continue": true
     },
@@ -126,8 +126,8 @@
         "GpioNum": 78,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@mtia-blade-12_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@mtia-blade-12_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_MTIA_Blade_12-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_MTIA_Blade_12-pwrgd.service"]
         },
         "Continue": true
     },
@@ -137,8 +137,8 @@
         "GpioNum": 80,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@mtia-blade-13_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@mtia-blade-13_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_MTIA_Blade_13-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_MTIA_Blade_13-pwrgd.service"]
         },
         "Continue": true
     },
@@ -148,8 +148,8 @@
         "GpioNum": 82,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@mtia-blade-14_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@mtia-blade-14_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_MTIA_Blade_14-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_MTIA_Blade_14-pwrgd.service"]
         },
         "Continue": true
     },
@@ -159,8 +159,8 @@
         "GpioNum": 84,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@mtia-blade-15_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@mtia-blade-15_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_MTIA_Blade_15-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_MTIA_Blade_15-pwrgd.service"]
         },
         "Continue": true
     },
@@ -170,8 +170,8 @@
         "GpioNum": 86,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@mtia-blade-16_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@mtia-blade-16_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_MTIA_Blade_16-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_MTIA_Blade_16-pwrgd.service"]
         },
         "Continue": true
     },
@@ -181,8 +181,8 @@
         "GpioNum": 88,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@network-blade-1_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@network-blade-1_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_Network_Blade_1-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_Network_Blade_1-pwrgd.service"]
         },
         "Continue": true
     },
@@ -192,8 +192,8 @@
         "GpioNum": 90,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@network-blade-2_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@network-blade-2_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_Network_Blade_2-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_Network_Blade_2-pwrgd.service"]
         },
         "Continue": true
     },
@@ -203,8 +203,8 @@
         "GpioNum": 92,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@network-blade-3_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@network-blade-3_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_Network_Blade_3-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_Network_Blade_3-pwrgd.service"]
         },
         "Continue": true
     },
@@ -214,8 +214,8 @@
         "GpioNum": 94,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@network-blade-4_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@network-blade-4_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_Network_Blade_4-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_Network_Blade_4-pwrgd.service"]
         },
         "Continue": true
     },
@@ -225,8 +225,8 @@
         "GpioNum": 96,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@network-blade-5_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@network-blade-5_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_Network_Blade_5-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_Network_Blade_5-pwrgd.service"]
         },
         "Continue": true
     },
@@ -236,8 +236,8 @@
         "GpioNum": 98,
         "EventMon": "BOTH",
         "Targets": {
-            "FALLING": ["power-rail-deassert-log@network-blade-6_pwrgd.service"],
-            "RISING": ["power-rail-assert-log@network-blade-6_pwrgd.service"]
+            "FALLING": ["power-rail-deassert-log@Minerva_Network_Blade_6-pwrgd.service"],
+            "RISING": ["power-rail-assert-log@Minerva_Network_Blade_6-pwrgd.service"]
         },
         "Continue": true
     },
@@ -248,12 +248,12 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@fcb-1.service",
+                "power-rail-deassert-log@Minerva_Fan_Board_1-pwrgd.service",
                 "rescan-fru.service",
                 "fan-reload.service"
             ],
             "RISING": [
-                "power-rail-assert-log@fcb-1.service",
+                "power-rail-assert-log@Minerva_Fan_Board_1-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -266,12 +266,12 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@fcb-2.service",
+                "power-rail-deassert-log@Minerva_Fan_Board_2-pwrgd.service",
                 "rescan-fru.service",
                 "fan-reload.service"
             ],
             "RISING": [
-                "power-rail-assert-log@fcb-2.service",
+                "power-rail-assert-log@Minerva_Fan_Board_2-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -284,12 +284,12 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@fcb-3.service",
+                "power-rail-deassert-log@Minerva_Fan_Board_3-pwrgd.service",
                 "rescan-fru.service",
                 "fan-reload.service"
             ],
             "RISING": [
-                "power-rail-assert-log@fcb-3.service",
+                "power-rail-assert-log@Minerva_Fan_Board_3-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -302,12 +302,12 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@fcb-4.service",
+                "power-rail-deassert-log@Minerva_Fan_Board_4-pwrgd.service",
                 "rescan-fru.service",
                 "fan-reload.service"
             ],
             "RISING": [
-                "power-rail-assert-log@fcb-4.service",
+                "power-rail-assert-log@Minerva_Fan_Board_4-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -320,12 +320,12 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@fcb-6.service",
+                "power-rail-deassert-log@Minerva_Fan_Board_6-pwrgd.service",
                 "rescan-fru.service",
                 "fan-reload.service"
             ],
             "RISING": [
-                "power-rail-assert-log@fcb-6.service",
+                "power-rail-assert-log@Minerva_Fan_Board_6-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -338,12 +338,12 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@fcb-5.service",
+                "power-rail-deassert-log@Minerva_Fan_Board_5-pwrgd.service",
                 "rescan-fru.service",
                 "fan-reload.service"
             ],
             "RISING": [
-                "power-rail-assert-log@fcb-5.service",
+                "power-rail-assert-log@Minerva_Fan_Board_5-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -356,11 +356,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@mtia-blade-1_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_MTIA_Blade_1-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@mtia-blade-1_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_MTIA_Blade_1-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -373,11 +373,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@mtia-blade-2_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_MTIA_Blade_2-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@mtia-blade-2_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_MTIA_Blade_2-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -390,11 +390,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@mtia-blade-3_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_MTIA_Blade_3-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@mtia-blade-3_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_MTIA_Blade_3-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -407,11 +407,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@mtia-blade-4_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_MTIA_Blade_4-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@mtia-blade-4_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_MTIA_Blade_4-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -424,11 +424,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@mtia-blade-5_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_MTIA_Blade_5-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@mtia-blade-5_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_MTIA_Blade_5-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -441,11 +441,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@mtia-blade-6_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_MTIA_Blade_6-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@mtia-blade-6_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_MTIA_Blade_6-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -458,11 +458,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@mtia-blade-7_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_MTIA_Blade_7-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@mtia-blade-7_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_MTIA_Blade_7-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -475,11 +475,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@mtia-blade-8_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_MTIA_Blade_8-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@mtia-blade-8_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_MTIA_Blade_8-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -492,11 +492,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@mtia-blade-9_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_MTIA_Blade_9-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@mtia-blade-9_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_MTIA_Blade_9-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -509,11 +509,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@mtia-blade-10_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_MTIA_Blade_10-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@mtia-blade-10_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_MTIA_Blade_10-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -526,11 +526,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@mtia-blade-11_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_MTIA_Blade_11-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@mtia-blade-11_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_MTIA_Blade_11-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -543,11 +543,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@mtia-blade-12_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_MTIA_Blade_12-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@mtia-blade-12_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_MTIA_Blade_12-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -560,11 +560,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@mtia-blade-13_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_MTIA_Blade_13-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@mtia-blade-13_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_MTIA_Blade_13-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -577,11 +577,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@mtia-blade-14_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_MTIA_Blade_14-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@mtia-blade-14_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_MTIA_Blade_14-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -594,11 +594,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@mtia-blade-15_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_MTIA_Blade_15-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@mtia-blade-15_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_MTIA_Blade_15-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -611,11 +611,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@mtia-blade-16_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_MTIA_Blade_16-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@mtia-blade-16_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_MTIA_Blade_16-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -628,11 +628,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@network-blade-1_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_Network_Blade_1-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@network-blade-1_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_Network_Blade_1-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -645,11 +645,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@network-blade-2_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_Network_Blade_2-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@network-blade-2_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_Network_Blade_2-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -662,11 +662,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@network-blade-3_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_Network_Blade_3-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@network-blade-3_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_Network_Blade_3-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -679,11 +679,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@network-blade-4_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_Network_Blade_4-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@network-blade-4_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_Network_Blade_4-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -696,11 +696,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@network-blade-5_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_Network_Blade_5-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@network-blade-5_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_Network_Blade_5-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
@@ -713,11 +713,11 @@
         "EventMon": "BOTH",
         "Targets": {
             "FALLING": [
-                "power-rail-deassert-log@network-blade-6_hsc-pwrgd.service",
+                "power-rail-deassert-log@Minerva_Network_Blade_6-hsc-pwrgd.service",
                 "rescan-fru.service"
             ],
             "RISING": [
-                "power-rail-assert-log@network-blade-6_hsc-pwrgd.service",
+                "power-rail-assert-log@Minerva_Network_Blade_6-hsc-pwrgd.service",
                 "rescan-fru.service"
             ]
         },
