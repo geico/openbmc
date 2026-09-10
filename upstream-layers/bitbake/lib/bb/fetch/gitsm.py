@@ -22,10 +22,10 @@ import bb
 import copy
 import shutil
 import tempfile
-from   bb.fetch2.git import Git
-from   bb.fetch2 import runfetchcmd
-from   bb.fetch2 import logger
-from   bb.fetch2 import Fetch
+from   bb.fetch.git import Git
+from   bb.fetch import runfetchcmd
+from   bb.fetch import logger
+from   bb.fetch import Fetch
 
 class GitSM(Git):
     def supports(self, ud, d):
@@ -88,7 +88,10 @@ class GitSM(Git):
 
             # Convert relative to absolute uri based on parent uri
             if  uris[m].startswith('..') or uris[m].startswith('./'):
-                newud = copy.copy(ud)
+                if hasattr(ud, "origud"):
+                    newud = copy.copy(ud.origud)
+                else:
+                    newud = copy.copy(ud)
                 newud.path = os.path.normpath(os.path.join(newud.path, uris[m]))
                 uris[m] = Git._get_repo_url(self, newud)
 
@@ -115,7 +118,7 @@ class GitSM(Git):
                     proto = "file"
                     url = "gitsm://" + uris[module]
             if url.endswith("{}{}".format(ud.host, ud.path)):
-                raise bb.fetch2.FetchError("Submodule refers to the parent repository. This will cause deadlock situation in current version of Bitbake." \
+                raise bb.fetch.FetchError("Submodule refers to the parent repository. This will cause deadlock situation in current version of Bitbake." \
                                            "Consider using git fetcher instead.")
 
             url += ';protocol=%s' % proto

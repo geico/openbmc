@@ -18,16 +18,23 @@ import errno
 import itertools
 import logging
 import re
-import bb
-from bb import msg, event
-from bb import monitordisk
 import subprocess
 import pickle
 import shlex
 import pprint
 import time
 
-Process = bb.multiprocessing.Process
+import bb.build
+import bb.cache
+import bb.cooker
+import bb.event
+import bb.monitordisk
+import bb.parse
+import bb.progress
+import bb.utils
+from bb import multiprocessing
+
+Process = multiprocessing.Process
 
 bblogger = logging.getLogger("BitBake")
 logger = logging.getLogger("BitBake.RunQueue")
@@ -166,6 +173,13 @@ class RunQueueScheduler(object):
                 self.buildable.add(tid)
 
         self.rev_prio_map = None
+        self.prev_cpu_pressure = 0.0
+        self.prev_io_pressure = 0.0
+        self.prev_memory_pressure = 0.0
+        self.prev_pressure_time = 0.0
+        self.check_pressure = False
+        self.pressure_state = None
+        self.loadfactor_limit = None
         self.is_pressure_usable()
 
     def is_pressure_usable(self):
@@ -180,9 +194,9 @@ class RunQueueScheduler(object):
                     open("/proc/pressure/io") as io_pressure_fds, \
                     open("/proc/pressure/memory") as memory_pressure_fds:
 
-                    self.prev_cpu_pressure = cpu_pressure_fds.readline().split()[4].split("=")[1]
-                    self.prev_io_pressure = io_pressure_fds.readline().split()[4].split("=")[1]
-                    self.prev_memory_pressure = memory_pressure_fds.readline().split()[4].split("=")[1]
+                    self.prev_cpu_pressure = float(cpu_pressure_fds.readline().split()[4].split("=")[1])
+                    self.prev_io_pressure = float(io_pressure_fds.readline().split()[4].split("=")[1])
+                    self.prev_memory_pressure = float(memory_pressure_fds.readline().split()[4].split("=")[1])
                     self.prev_pressure_time = time.time()
                 self.check_pressure = True
             except:
@@ -201,15 +215,15 @@ class RunQueueScheduler(object):
                 open("/proc/pressure/io") as io_pressure_fds, \
                 open("/proc/pressure/memory") as memory_pressure_fds:
                 # extract "total" from /proc/pressure/{cpu|io}
-                curr_cpu_pressure = cpu_pressure_fds.readline().split()[4].split("=")[1]
-                curr_io_pressure = io_pressure_fds.readline().split()[4].split("=")[1]
-                curr_memory_pressure = memory_pressure_fds.readline().split()[4].split("=")[1]
+                curr_cpu_pressure = float(cpu_pressure_fds.readline().split()[4].split("=")[1])
+                curr_io_pressure = float(io_pressure_fds.readline().split()[4].split("=")[1])
+                curr_memory_pressure = float(memory_pressure_fds.readline().split()[4].split("=")[1])
                 now = time.time()
                 tdiff = now - self.prev_pressure_time
                 psi_accumulation_interval = 1.0
-                cpu_pressure = (float(curr_cpu_pressure) - float(self.prev_cpu_pressure)) / tdiff
-                io_pressure = (float(curr_io_pressure) - float(self.prev_io_pressure)) / tdiff
-                memory_pressure = (float(curr_memory_pressure) - float(self.prev_memory_pressure)) / tdiff
+                cpu_pressure = (curr_cpu_pressure - self.prev_cpu_pressure) / tdiff
+                io_pressure = (curr_io_pressure - self.prev_io_pressure) / tdiff
+                memory_pressure = (curr_memory_pressure - self.prev_memory_pressure) / tdiff
                 exceeds_cpu_pressure =  self.rq.max_cpu_pressure and cpu_pressure > self.rq.max_cpu_pressure
                 exceeds_io_pressure =  self.rq.max_io_pressure and io_pressure > self.rq.max_io_pressure
                 exceeds_memory_pressure =  self.rq.max_memory_pressure and memory_pressure > self.rq.max_memory_pressure
@@ -222,7 +236,7 @@ class RunQueueScheduler(object):
 
             pressure_state = (exceeds_cpu_pressure, exceeds_io_pressure, exceeds_memory_pressure)
             pressure_values = (round(cpu_pressure,1), self.rq.max_cpu_pressure, round(io_pressure,1), self.rq.max_io_pressure, round(memory_pressure,1), self.rq.max_memory_pressure)
-            if hasattr(self, "pressure_state") and pressure_state != self.pressure_state:
+            if self.pressure_state is not None and pressure_state != self.pressure_state:
                 psi_logger.verbose("Pressure status changed to CPU: %s, IO: %s, Mem: %s (CPU: %s/%s, IO: %s/%s, Mem: %s/%s) - using %s/%s bitbake threads" % (pressure_state + pressure_values + (len(self.rq.runq_running.difference(self.rq.runq_complete)), self.rq.number_tasks)))
                 bb.event.fire(PSIEvent(pressure_state, pressure_values), self.rq.cfgData)
             self.pressure_state = pressure_state
@@ -233,7 +247,7 @@ class RunQueueScheduler(object):
             # bb.warn("Comparing %s to %s" % (loadfactor, self.rq.max_loadfactor))
             if loadfactor > self.rq.max_loadfactor:
                 limit = True
-            if hasattr(self, "loadfactor_limit") and limit != self.loadfactor_limit:
+            if self.loadfactor_limit is not None and limit != self.loadfactor_limit:
                 bb.note("Load average limiting set to %s as load average: %s - using %s/%s bitbake threads" % (limit, loadfactor, len(self.rq.runq_running.difference(self.rq.runq_complete)), self.rq.number_tasks))
             self.loadfactor_limit = limit
             return limit
@@ -280,9 +294,10 @@ class RunQueueScheduler(object):
                 return tid
 
         if not self.rev_prio_map:
-            self.rev_prio_map = {}
-            for tid in self.rqdata.runtaskentries:
-                self.rev_prio_map[tid] = self.prio_map.index(tid)
+            self.rev_prio_map = {
+                tid: priority
+                for priority, tid in enumerate(self.prio_map)
+            }
 
         best = None
         bestprio = None
@@ -473,6 +488,8 @@ class RunQueueData:
         self.setscene_ignore_tasks = get_setscene_enforce_ignore_tasks(cfgData, targets)
         self.setscene_enforce = (cfgData.getVar('BB_SETSCENE_ENFORCE') == "1")
         self.init_progress_reporter = bb.progress.DummyMultiStageProcessProgressReporter()
+        self.target_tids = []
+        self.runq_setscene_tids = set()
 
         self.reset()
 
@@ -498,8 +515,6 @@ class RunQueueData:
         Some tasks aren't buildable, likely due to circular dependency issues.
         Identify the circular dependencies and print them in a user readable format.
         """
-        from copy import deepcopy
-
         valid_chains = []
         explored_deps = {}
         msgs = []
@@ -1335,12 +1350,15 @@ class RunQueue:
         # here, just in case that there ever is more than one RunQueue instance,
         # start the handler when reaching RunQueueState.SCENE_INIT, and stop it when
         # done with the build.
-        self.dm = monitordisk.diskMonitor(cfgData)
+        self.dm = bb.monitordisk.diskMonitor(cfgData)
         self.dm_event_handler_name = '_bb_diskmonitor_' + str(id(self))
         self.dm_event_handler_registered = False
         self.rqexe = None
         self.worker = {}
         self.fakeworker = {}
+        self.teardown = False
+        self.invalidtasks_dump = set()
+        self.dumpsigs_launched = None
 
     @staticmethod
     def send_pickled_data(worker, data, name):
@@ -1634,7 +1652,7 @@ class RunQueue:
                     logger.info("Tasks Summary: Attempted %d tasks of which %d didn't need to be rerun and all succeeded.", self.rqexe.stats.completed, self.rqexe.stats.skipped)
 
         if self.state == RunQueueState.FAILED:
-            raise bb.runqueue.TaskFailure(self.rqexe.failed_tids)
+            raise TaskFailure(self.rqexe.failed_tids)
 
         if self.state == RunQueueState.COMPLETE:
             # All done
@@ -1647,7 +1665,7 @@ class RunQueue:
         # Catch unexpected exceptions and ensure we exit when an error occurs, not loop.
         try:
             return self._execute_runqueue()
-        except bb.runqueue.TaskFailure:
+        except TaskFailure:
             raise
         except SystemExit:
             raise
@@ -1684,7 +1702,7 @@ class RunQueue:
             bb.parse.siggen.dump_sigtask(taskfn, taskname, dataCaches[mc].stamp[taskfn], True)
 
     def dump_signatures(self, options):
-        if not hasattr(self, "dumpsigs_launched"):
+        if self.dumpsigs_launched is None:
             if bb.cooker.CookerFeatures.RECIPE_SIGGEN_INFO not in self.cooker.featureset:
                 bb.fatal("The dump signatures functionality needs the RECIPE_SIGGEN_INFO feature enabled")
 
@@ -1878,6 +1896,7 @@ class RunQueueExecute:
         self.holdoff_tasks = set()
         self.holdoff_need_update = True
         self.sqdone = False
+        self.taskdepdata_cache = {}
 
         self.stats = RunQueueStats(len(self.rqdata.runtaskentries), len(self.rqdata.runq_setscene_tids))
 
@@ -1911,7 +1930,7 @@ class RunQueueExecute:
             self.max_loadfactor = float(self.max_loadfactor)
             if self.max_loadfactor <= 0:
                 bb.fatal("Invalid BB_LOADFACTOR_MAX %s, needs to be greater than zero." % (self.max_loadfactor))
-            
+
         # List of setscene tasks which we've covered
         self.scenequeue_covered = set()
         # List of tasks which are covered (including setscene ones)
@@ -2233,9 +2252,8 @@ class RunQueueExecute:
                             return True
                         continue
                     # If covered tasks are running, need to wait for them to complete
-                    for t in self.sqdata.sq_covered_tasks[nexttask]:
-                        if t in self.runq_running and t not in self.runq_complete:
-                            continue
+                    if any(t in self.runq_running and t not in self.runq_complete for t in self.sqdata.sq_covered_tasks[nexttask]):
+                        continue
                     if nexttask in self.sq_deferred:
                         # Deferred tasks that were still deferred were skipped above so we now need to process
                         logger.debug("Task %s no longer deferred" % nexttask)
