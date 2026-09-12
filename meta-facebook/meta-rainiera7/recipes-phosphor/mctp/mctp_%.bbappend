@@ -1,5 +1,7 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
+inherit systemd
+
 SRC_URI:append = " \
     file://mctpd.conf \
     file://mctp_init.service \
@@ -16,10 +18,6 @@ SYSTEMD_SERVICE:${PN}:append = " \
     mctp_remove@.service \
     mctp_setup@.service \
     rainier-mctp-i3c@0.service \
-"
-
-FILES:${PN}:append = " \
-    ${systemd_system_unitdir}/rainier-mctp-i3c@.service \
 "
 
 RDEPENDS:${PN}:append = "bash"
