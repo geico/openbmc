@@ -17,7 +17,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=e3fc50a88d0a364313df4b21ef20c29e"
 DEPENDS += "cli11"
 DEPENDS += "systemd"
 DEPENDS += "phosphor-ipmi-host"
-SRCREV = "759f0500a4d9f9e2063206ea64d60079175b7d75"
+SRCREV = "d0e5dc4ae82bf903e2b659231ae5ed6449271854"
 PV = "1.0+git${SRCPV}"
 PR = "r1"
 
@@ -32,9 +32,8 @@ SYSTEMD_SERVICE:${PN} = " \
 inherit meson pkgconfig
 inherit systemd
 
-PACKAGECONFIG ??= "pam-authenticate rmcp-ping"
+PACKAGECONFIG ??= "rmcp-ping"
 PACKAGECONFIG[rmcp-ping] = "-Drmcp_ping=enabled,-Drmcp_ping=disabled"
-PACKAGECONFIG[pam-authenticate] = "-Dpam_authenticate=enabled,-Dpam_authenticate=disabled"
 
 EXTRA_OEMESON = " \
         -Dtests=disabled \

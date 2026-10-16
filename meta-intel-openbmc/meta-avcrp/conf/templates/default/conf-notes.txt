@@ -1,4 +1,2 @@
 Common targets are:
     obmc-phosphor-image
-    virtual/kernel
-    phosphor-ipmi-host

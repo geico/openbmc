@@ -77,7 +77,8 @@ covered by [Jenkins](https://jenkins.openbmc.org/job/ci-openbmc/) CI testing.
 * ingrasys
   * zaius
 * intel
-  * s2600wf
+  * avcrp
+  * jncrp
 * inventec
   * starscream
   * transformers

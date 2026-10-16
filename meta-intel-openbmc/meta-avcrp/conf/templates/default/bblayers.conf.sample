@@ -13,5 +13,5 @@ BBLAYERS ?= " \
   ##OEROOT##/meta-phosphor \
   ##OEROOT##/meta-aspeed \
   ##OEROOT##/meta-intel-openbmc \
-  ##OEROOT##/meta-intel-openbmc/meta-s2600wf \
-"
+  ##OEROOT##/meta-intel-openbmc/meta-avcrp \
+  "
