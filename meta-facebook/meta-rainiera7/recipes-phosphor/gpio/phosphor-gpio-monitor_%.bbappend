@@ -20,9 +20,11 @@ SRC_URI:append = " \
     file://set-uart-select-led \
     file://rainier-gpio-handler \
     file://rainier-gpio-handler@.service \
-    file://rainier-mctp-ready@.target \
     file://button-event-logger \
     file://button-event-logger@.service \
+    file://vr-fault-assert-log@.service \
+    file://vr-fault-deassert-log@.service \
+    file://vr-fault-event-logger \
     "
 
 RDEPENDS:${PN}:append = " bash"
@@ -40,6 +42,8 @@ SYSTEMD_SERVICE:${PN} += " \
     uart-select-led@.service \
     rainier-gpio-handler@.service \
     button-event-logger@.service \
+    vr-fault-assert-log@.service \
+    vr-fault-deassert-log@.service \
     "
 
 do_install:append() {
@@ -49,14 +53,13 @@ do_install:append() {
 
     install -d ${D}${systemd_system_unitdir}/
     install -m 0644 ${UNPACKDIR}/*.service ${D}${systemd_system_unitdir}/
-    install -m 0644 ${UNPACKDIR}/rainier-mctp-ready@.target \
-                    ${D}${systemd_system_unitdir}/
 
     install -d ${D}${libexecdir}/${PN}
     install -m 0755 ${UNPACKDIR}/reset_btn ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/assert-power-good-drop ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/deassert-power-good-drop ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/thermal-event-logger ${D}${libexecdir}/${PN}/
+    install -m 0755 ${UNPACKDIR}/vr-fault-event-logger ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/smc-event-logger ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/set-uart-select-led ${D}${libexecdir}/${PN}/
     install -m 0755 ${UNPACKDIR}/rainier-gpio-handler ${D}${libexecdir}/${PN}/
