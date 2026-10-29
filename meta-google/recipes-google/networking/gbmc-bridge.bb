@@ -5,6 +5,7 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/Apache-2.0;md5
 
 inherit systemd
 
+GBMC_NCSI_IF_NAME ??= ""
 GBMC_DHCP_RELAY ??= "${@'' if int(d.getVar('FLASH_SIZE')) < 65536 else '1'}"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
@@ -17,11 +18,12 @@ SRC_URI += " \
   file://50-gbmc-br.rules \
   file://gbmc-br-ula.sh \
   file://gbmc-br-from-ra.sh \
+  file://gbmc-br-withdrawn.sh \
   file://gbmc-br-hostname.sh \
   file://gbmc-br-hostname.service \
   file://gbmc-br-ra.sh.in \
   file://gbmc-br-ra.service \
-  file://gbmc-br-gw-src.sh \
+  file://gbmc-br-gw-src.sh.in \
   file://gbmc-br-nft.sh \
   file://gbmc-br-dhcp.sh \
   file://50-gbmc-psu-hardreset.sh.in \
@@ -199,7 +201,9 @@ do_install() {
   install -d -m0755 "$mondir"
   install -m0644 ${UNPACKDIR}/gbmc-br-ula.sh "$mondir"/
   install -m0644 ${UNPACKDIR}/gbmc-br-from-ra.sh "$mondir"/
-  install -m0644 ${UNPACKDIR}/gbmc-br-gw-src.sh "$mondir"/
+  install -m0644 ${UNPACKDIR}/gbmc-br-withdrawn.sh "$mondir"/
+  sed 's,@NCSI_IF@,${GBMC_NCSI_IF_NAME},g' ${UNPACKDIR}/gbmc-br-gw-src.sh.in \
+    >"$mondir"/gbmc-br-gw-src.sh
   install -m0644 ${UNPACKDIR}/gbmc-br-nft.sh "$mondir"/
 
   install -d -m0755 ${D}${libexecdir}

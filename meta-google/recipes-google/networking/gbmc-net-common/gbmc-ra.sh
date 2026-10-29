@@ -20,8 +20,13 @@ source /usr/share/gbmc-net-lib.sh || exit
 
 : "${RA_IF:?No RA interface set}"
 : "${IP_OFFSET=?1}"
-: "${ROUTE_METRIC:?No Metric set}"
-ROUTE_METRIC_LO="$((ROUTE_METRIC+1000))"
+: "${ROUTE_METRIC?No Metric set}"
+# An empty ROUTE_METRIC means the RA router is only used for the interface
+# routing table, without any default routes in the main table.
+ROUTE_METRIC_LO=
+if [ -n "$ROUTE_METRIC" ]; then
+  ROUTE_METRIC_LO="$((ROUTE_METRIC + GBMC_ROUTE_METRIC_FALLBACK_OFFSET))"
+fi
 
 # We would prefer empty string but it's easier for associative array handling
 # to use invalid
@@ -53,13 +58,19 @@ add_rtr() {
     mkdir -p "$file.d"
     printf '[Neighbor]\nMACAddress=%s\nAddress=%s\n' \
       "$mac" "$rtr" >"$file.d"/10-gateway.conf
-    printf '[Route]\nGateway=%s\nGatewayOnLink=true\nMetric=512\nTable=%d\n' \
-      "$rtr" "$route_table" >>"$file.d"/10-gateway.conf
-    printf '[Route]\nGateway=%s\nGatewayOnLink=true\nMetric=%d\n' \
-      "$rtr" "$ROUTE_METRIC_LO" >>"$file.d"/10-gateway.conf
-    if (( new == 1 )); then
+    printf '[Route]\nGateway=%s\nGatewayOnLink=true\nMetric=%d\nTable=%d\n' \
+      "$rtr" "$GBMC_ROUTE_METRIC_ONLINK" "$route_table" >>"$file.d"/10-gateway.conf
+    if [ -n "$ROUTE_METRIC" ]; then
       printf '[Route]\nGateway=%s\nGatewayOnLink=true\nMetric=%d\n' \
-        "$rtr" "$ROUTE_METRIC" >"$file.d"/10-gateway-dyn.conf
+        "$rtr" "$ROUTE_METRIC_LO" >>"$file.d"/10-gateway.conf
+    fi
+    if (( new == 1 )); then
+      if [ -n "$ROUTE_METRIC" ]; then
+        printf '[Route]\nGateway=%s\nGatewayOnLink=true\nMetric=%d\n' \
+          "$rtr" "$ROUTE_METRIC" >"$file.d"/10-gateway-dyn.conf
+      else
+        rm -f "$file.d"/10-gateway-dyn.conf
+      fi
       mkdir -p /run/last-ra
       printf '%s\n%s\n' "$rtr" "$mac" >"/run/last-ra/$RA_IF"
       if [ -z "${GBMC_AVOID_RWFS-}" ]; then
@@ -73,9 +84,11 @@ add_rtr() {
   # Fall back to reload only if ip link commands fail
   local st=0
   ip -6 neigh replace "$rtr" dev "$RA_IF" lladdr "$mac" || st=$?
-  ip -6 route replace default via "$rtr" onlink dev "$RA_IF" metric 512 table "$route_table" || st=$?
-  ip -6 route replace default via "$rtr" onlink dev "$RA_IF" metric "$ROUTE_METRIC_LO" || st=$?
-  if (( new == 1 )); then
+  ip -6 route replace default via "$rtr" onlink dev "$RA_IF" metric "$GBMC_ROUTE_METRIC_ONLINK" table "$route_table" || st=$?
+  if [ -n "$ROUTE_METRIC" ]; then
+    ip -6 route replace default via "$rtr" onlink dev "$RA_IF" metric "$ROUTE_METRIC_LO" || st=$?
+  fi
+  if (( new == 1 )) && [ -n "$ROUTE_METRIC" ]; then
     ip -6 route replace default via "$rtr" onlink dev "$RA_IF" metric "$ROUTE_METRIC" || st=$?
   fi
   if (( st != 0 )); then
@@ -111,12 +124,6 @@ default_update_rtr() {
   local mac="$2"
   local op="${3-add}"
 
-  if ip addr show | grep -q "^[ ]*inet6 $rtr/"; then
-    echo "Router is ourself, ignoring" >&2
-    return 0
-  fi
-
-
   if [[ ${op} = "add" ]]; then
     echo "Set router $rtr on $RA_IF" >&2
     add_rtr "$rtr" "$mac" 1
@@ -128,6 +135,7 @@ default_update_rtr() {
       rm -rf "$file"
     done
 
+    [ -n "$ROUTE_METRIC" ] || return 0
     # Fall back to reload if remove failed
     ip -6 route del default via "$rtr" onlink dev "$RA_IF" metric "$ROUTE_METRIC" || \
       gbmc_net_networkd_reload || true
@@ -145,13 +153,13 @@ default_update_fqdn() {
 }
 
 # mininum retry time
-min_w=10
+min_w="$GBMC_RA_MIN_RETRY"
 # rdisc time
-r_timeout=10
+r_timeout="$GBMC_RA_TIMEOUT"
 # routing expiration time
-expire_time=180
+expire_time="$GBMC_RA_EXPIRE"
 # rs intervals
-rs_intervals=30
+rs_intervals="$GBMC_RA_RS_INTERVAL"
 declare -A rtrs
 rtrs=()
 while true; do
@@ -202,6 +210,10 @@ while true; do
       # Only valid default routers can be considered, 0 lifetime implies
       # a non-default router
       (( lifetime > 0 )) || continue
+      if ip addr show | grep -q "^[ ]*inet6 $rtr/"; then
+        echo "Router is ourself, ignoring" >&2
+        continue
+      fi
 
       dl=$((expire_time + SECONDS))
       fqdn=
